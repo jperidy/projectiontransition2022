@@ -130,16 +130,16 @@ $form-file-button-color:                $gray-600;
 
 @font-face {
     font-family: 'omotenashi_2regular';
-    src: url('fonts/omotenashi2-4be39-webfont.woff2') format('woff2'),
-        url('fonts/omotenashi2-4be39-webfont.woff') format('woff');
+    src: url('../static/fonts/omotenashi2-4be39-webfont.woff2') format('woff2'),
+        url('../static/fonts/omotenashi2-4be39-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Roboto-Regular';
-    src: url('fonts/Roboto-Regular.eot');
-    src: local('☺'), url('fonts/Roboto-Regular.woff') format('woff'), url('fonts/Roboto-Regular.ttf') format('truetype'), url('fonts/Roboto-Regular.svg') format('svg');
+    src: url('../static/fonts/Roboto-Regular.eot');
+    src: local('☺'), url('../static/fonts/Roboto-Regular.woff') format('woff'), url('../static/fonts/Roboto-Regular.ttf') format('truetype'), url('fonts/Roboto-Regular.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -150,7 +150,7 @@ $form-file-button-color:                $gray-600;
     margin: 0px;
 }
 main {
-    background-image: url('images/fond.jpeg');
+    background-image: url('../static/images/fond.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
