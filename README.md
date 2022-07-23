@@ -73,7 +73,7 @@ npm install pm2@latest -g
 ### Démarrer
 ```
 npm run build
-HOST=127.0.0.1 PORT=3000 pm2 start build/index.js
+HOST=127.0.0.1 PORT=3001 pm2 start build/index.js
 ```
 Modifier les variables d'environnement HOST et PORT pour changer l'exposition sur votre serveur de l'application.
 

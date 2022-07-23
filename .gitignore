@@ -12,3 +12,6 @@ static_server/public/uploads/*.jpg
 static_server/public/uploads/*.png
 static_server/public/uploads/*.zip
 config.json
+
+_backup-mongodb
+migrations
