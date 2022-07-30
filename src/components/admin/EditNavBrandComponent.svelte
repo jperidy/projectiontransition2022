@@ -35,7 +35,7 @@
     {#if loadingImage}
       <Loading />
     {:else}
-      <img src={navBar.BRAND.LOGO.path ? config.STATIC_SERVER_URL + navBar.BRAND.LOGO.path : ''} alt={navBar.BRAND.LOGO.alt} class="img-fluid rounded" />
+      <img src={navBar.BRAND.LOGO.path ? navBar.BRAND.LOGO.path : ''} alt={navBar.BRAND.LOGO.alt} class="img-fluid rounded" />
     {/if}
   </div>
   <div class="col">

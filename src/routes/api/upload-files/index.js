@@ -7,7 +7,7 @@ export async function POST({ url, request: req }) {
         const fileName = url.searchParams.get('fileName');
         const __dir = path.resolve();
     
-        const storage = `${__dir}/static_server/public/uploads/${fileName}`;
+        const storage = `${__dir}/public/uploads/${fileName}`;
     
         const stream = req.body.getReader();
     
@@ -33,7 +33,7 @@ export async function POST({ url, request: req }) {
 export async function DELETE({ url }) {
     try {
         const name = url.searchParams.get('url');
-        const directory = path.resolve() + '/static_server/public';
+        const directory = path.resolve() + '/public';
 
         unlinkSync(directory + name);
 

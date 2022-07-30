@@ -92,7 +92,7 @@
             {#if loadingImage}
               <Loading />
             {:else}
-              <img class='img-fluid bg-light rounded' src={config.STATIC_SERVER_URL + snIcon} alt={snAlt} style="width: 5vh;" />
+              <img class='img-fluid bg-light rounded' src={snIcon} alt={snAlt} style="width: 5vh;" />
             {/if}
           {:else}
               <div class="bg-light rounded text-center text-dark d-flex align-items-center justify-content-center" style="height: 5vh; width: 5vh;">X</div>
@@ -133,7 +133,7 @@
           {#if loadingImage}
             <Loading />
           {:else}
-            <img class='img-fluid bg-light rounded' src={config.STATIC_SERVER_URL + item.icon} alt={snAlt} style="width: 5vh;" />
+            <img class='img-fluid bg-light rounded' src={item.icon} alt={snAlt} style="width: 5vh;" />
           {/if}
         </div>
         <div class="col my-auto">

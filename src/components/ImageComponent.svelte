@@ -62,7 +62,7 @@
                     <a href={values[0].redirection} target={values[0].redirection.match(/^http/i) ? '_blank' : ''} >
                         <figure class={`figure ${isSelected.select && "border border-3 rounded"}`} style={`transform: rotate(${transformR}deg) scale(${scaleXY, scaleXY});padding-left: ${paddingL}rem;;padding-right: ${paddingR}rem;padding-top: ${paddingT}rem;;padding-bottom: ${paddingB}rem;`}>
                             <img 
-                                src={`${config.STATIC_SERVER_URL}${values[0].url}`} 
+                                src={values[0].url} 
                                 alt={values[0].substitution}
                                 class={`figure-img img-fluid m-0 p-0 ${rounded} ${shadow}`}
                                 style={`width:${width}%;height:100%;`}
@@ -73,7 +73,7 @@
                 {:else}
                     <figure class={`figure ${isSelected.select && "border border-3 rounded"}`} style={`transform: rotate(${transformR}deg) scale(${scaleXY, scaleXY});padding-left: ${paddingL}rem;;padding-right: ${paddingR}rem;padding-top: ${paddingT}rem;;padding-bottom: ${paddingB}rem;`}>
                         <img 
-                            src={`${config.STATIC_SERVER_URL}${values[0].url}`} 
+                            src={values[0].url} 
                             alt={values[0].substitution}
                             class={`figure-img img-fluid m-0 p-0 ${rounded} ${shadow}`}
                             style={`width:${width}%;height:100%;`}

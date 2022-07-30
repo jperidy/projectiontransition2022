@@ -15,7 +15,7 @@
                 <a href="#up">
                     <img 
                         class='img-fluid mx-2'
-                        src={config.STATIC_SERVER_URL + footer.BRAND.LOGO.path}
+                        src={footer.BRAND.LOGO.path}
                         alt={footer.BRAND.LOGO.alt}
                         style={footer.BRAND.LOGO.style}
                     />
@@ -42,7 +42,7 @@
                                     <img 
                                         class={footer.STYLE.SOCIAL_NETWORKS.bootstrapClass} 
                                         style={footer.STYLE.SOCIAL_NETWORKS.style} 
-                                        src={config.STATIC_SERVER_URL + item.icon} 
+                                        src={item.icon} 
                                         alt={item.alt} 
                                     />
                                 </a>

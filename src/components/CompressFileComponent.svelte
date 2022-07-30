@@ -30,7 +30,7 @@
 
         const filePath = values[0].url;
         const link = document.createElement('a');
-        link.href = config.STATIC_SERVER_URL + '/' + filePath;
+        link.href = filePath;
         link.download = filePath.substr(filePath.lastIndexOf('/') + 1);
         link.click();
     };

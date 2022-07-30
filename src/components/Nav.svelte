@@ -23,7 +23,7 @@
       <img 
         class='img-fluid' 
         style={navBar.BRAND.LOGO.style} 
-        src={config.STATIC_SERVER_URL + navBar.BRAND.LOGO.path} 
+        src={navBar.BRAND.LOGO.path} 
         alt={navBar.BRAND.LOGO.alt}
       />
     </a>
@@ -34,7 +34,7 @@
             <img 
               class='icone-rs' 
               style={navBar.STYLE.SOCIAL_NETWORKS.style} 
-              src={config.STATIC_SERVER_URL + item.icon} 
+              src={item.icon} 
               alt={item.alt} 
             />
           </a>
