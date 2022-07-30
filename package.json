@@ -5,6 +5,7 @@
 		"dev": "vite dev --port 3001",
 		"build": "vite build",
 		"start": "PORT=3001 node build",
+		"start:express": "node server.js",
 		"package": "svelte-kit package",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync",
