@@ -6,6 +6,8 @@
 		"build": "vite build",
 		"start": "PORT=3001 node build",
 		"start:express": "node server.js",
+		"deploye": "pm2 start server.js --name projectionTransition2022 --watch",
+		"undeploye": "pm2 stop projectionTransition2022",
 		"package": "svelte-kit package",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync",
