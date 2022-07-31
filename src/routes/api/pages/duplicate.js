@@ -13,11 +13,11 @@ export async function POST({request: req}) {
         }
     }
 
-    const objectToCreate = { ...content };
-    objectToCreate.name = objectToCreate.name + "_copy";
-    delete objectToCreate._id;
-
-    const contentCreated = await Page.create(objectToCreate);
+    const contentCreated = await Page.create({ 
+        content: content.content,
+        name: content.name + "_copy",
+        display: false,
+    });
 
     if (!contentCreated) {
         return {

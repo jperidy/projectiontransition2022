@@ -12,7 +12,7 @@
         const { seo } = await getSeo();
         const { fonts } = await getFonts();
         const { list: pagesList} = await getAllPagesList();
-        const pageRequest = await getContent(currentPage.split('/pages/')[1]);
+        const page = await getContent(currentPage.split('/pages/')[1]);
 
         return {
             status:200, 
@@ -23,7 +23,7 @@
                 fonts, 
                 url,
                 pagesList,
-                pageRequest,
+                page,
                 currentPage: currentPage
             }
         };
@@ -34,7 +34,7 @@
     import DisplayCustomComponent from "../components/DisplayCustomComponent.svelte";
     import MenuPage from "../components/admin/MenuPage.svelte";
     import MenuEdit from "../components/admin/MenuEdit.svelte";
-    import { userInfo } from "../store";
+    import { userInfo, pageRequest } from "../store";
     import { logout } from "../actions/userActions";
     import { goto } from "$app/navigation";
     import { browser } from "$app/env";
@@ -49,8 +49,8 @@
     import Footer from '../components/Footer.svelte';
     import Nav from '../components/Nav.svelte';
     import SeoComponent from '../components/SeoComponent.svelte';
-
     import '../mains.min.css';
+    import LeavingHandler from "../components/admin/LeavingHandler.svelte";
     
     export let defaultSeo;
     export let fonts;
@@ -58,7 +58,7 @@
     export let navBar;
     export let footer;
     export let pagesList;
-    export let pageRequest;
+    export let page;
     export let currentPage;
 
     let selectedComponent = {id:"", position:null};
@@ -68,6 +68,8 @@
     let showFonts = false;
     let showDefaultSeo = false;
     let showFavicon = false;
+
+    $:hasBeenModified = !(JSON.stringify(page.content) === JSON.stringify($pageRequest.content));
     
     let isAuthenticate = false;
     $: {
@@ -80,13 +82,18 @@
     };
 
     const selectPageHandler = async (pageName) => {
-        currentPage = pageName
-        pageRequest = await getContent(currentPage.split('/pages/')[1]);
+        if (
+            !hasBeenModified
+            || (hasBeenModified && window.confirm('Attention vous avez des modifications non enregistrées') )
+        ) {
+            currentPage = pageName
+            page = await getContent(currentPage.split('/pages/')[1]);
+        }
     };
 
     const updateContent = async() => {
-        pageRequest = await updateOrCreateContent(pageRequest.content);
-        currentPage = pageRequest.content.name;
+        page = await updateOrCreateContent(page.content);
+        currentPage = page.content.name;
         getPages();
     };
 
@@ -119,6 +126,8 @@
         {/each}
     {/if}
 </svelte:head>
+
+<LeavingHandler hasBeenModified={hasBeenModified} />
 
 <div id='up'></div>
 
@@ -157,28 +166,31 @@
                 class={`${showMenuPage ? "col-4" : "col-6"} shadow-lg position-relative px-0`}
                 id='admin-edit-panel'
             >
-                <div class="overflow-auto menu-edition">
-                    <div class="py-1">
-                        <MenuEdit 
-                            bind:page={pageRequest.content}
-                            bind:selectedComponent={selectedComponent}
-                            updateContent={updateContent}
-                        />
+                {#if !(showNavigationBar || showFooter || showFonts || showDefaultSeo || showFavicon)}
+                    <div class="overflow-auto menu-edition">
+                        <div class="py-1">
+                            <MenuEdit 
+                                bind:page={page.content}
+                                bind:selectedComponent={selectedComponent}
+                                bind:hasBeenModified={hasBeenModified}
+                                updateContent={updateContent}
+                            />
+                        </div>
+                        <div class="py-1">
+                            <EditSeoComponent bind:pageContent={page.content} />
+                        </div>
                     </div>
-                    <div class="py-1">
-                        <EditSeoComponent bind:pageContent={pageRequest.content} />
-                    </div>
-                </div>
-                <button 
-                    class="btn btn-dark btn-sm border border-3 rounded-circle position-absolute top-50 start-0 translate-middle"
-                    on:click={() => showMenuPage = !showMenuPage}
-                >
-                    {#if showMenuPage}
-                        <i class="bi bi-chevron-left"></i>
-                    {:else}
-                        <i class="bi bi-chevron-right"></i>
-                    {/if}
-                </button>
+                    <button 
+                        class="btn btn-dark btn-sm border border-3 rounded-circle position-absolute top-50 start-0 translate-middle"
+                        on:click={() => showMenuPage = !showMenuPage}
+                    >
+                        {#if showMenuPage}
+                            <i class="bi bi-chevron-left"></i>
+                        {:else}
+                            <i class="bi bi-chevron-right"></i>
+                        {/if}
+                    </button>
+                {/if}
             </div>
         
             <!-- zone to preview your page -->
@@ -215,8 +227,8 @@
                         <EditFooter bind:footer={footer}/>
                     {/if}
                     {#if (!showNavigationBar && !showFooter && !showFonts && !showDefaultSeo && !showFavicon)}
-                        {#if pageRequest.content && pageRequest.content.content}
-                            {#each pageRequest.content.content as section, position}
+                        {#if page.content && page.content.content}
+                            {#each page.content.content as section, position}
                                 <DisplayCustomComponent 
                                     bind:value={section.value}
                                     bind:values={section.values}
@@ -235,7 +247,7 @@
             </div>
         </div>
         <SeoComponent 
-            pageContent={pageRequest.content}
+            pageContent={page.content}
             url={url}
             siteURL={config.API_URL}
             defaultSeo={defaultSeo}

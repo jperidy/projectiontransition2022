@@ -6,8 +6,7 @@
     export let page;
     export let selectedComponent;
     export let updateContent;
-
-    $:hasBeenModified = !(JSON.stringify(page) === JSON.stringify($pageRequest.content));
+    export let hasBeenModified;
 
     const modalId = 'menuEditModal' + crypto.randomUUID();
 
@@ -49,7 +48,7 @@
 </div>
 <div class="mt-3">
     {#if page.content && page.content.length}
-        <div class="p-3">You are editing: <strong>{page.name}</strong></div>
+        <input type="text" class="form-control" bind:value={page.name} />
         {#each page.content as component, position}
             <div on:mouseleave={() => selectedComponent = {id:"", position:null}} on:mouseenter={() => selectedComponent = {id: component._id, position:null}}>
                 <DisplayEditMenu
