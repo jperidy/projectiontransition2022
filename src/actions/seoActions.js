@@ -18,7 +18,6 @@ export const getSeo = async () => {
         return { seo: data.value, loading: false, message: data.message };
 
     } catch (error) {
-        // console.log('__error', error);
         return { seo: {}, loading: false, message: 'Error loading seo ' + error };
 
     }
