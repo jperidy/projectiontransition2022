@@ -6,7 +6,7 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, './public')));
 
-const port = config.STATIC_SERVER_PORT;
+const port = config.STATIC_SERVER_URL;
 app.listen(port, () => {
     console.log(`App is running on port ${port}`)
 })
