@@ -21,7 +21,10 @@ export async function POST({ request: req}) {
 
     const storedSeo = await Seo.findOne({ name: "seo" });
     if (!storedSeo) {
-        const seoCreated = await Seo.create(updatedSeo);
+        const seoCreated = await Seo.create({
+            ...updatedSeo,
+            name: 'seo'
+        });
         if (!seoCreated) {
             return {
                 status: 500,

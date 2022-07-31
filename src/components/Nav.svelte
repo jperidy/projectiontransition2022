@@ -27,7 +27,7 @@
         alt={navBar.BRAND.LOGO.alt}
       />
     </a>
-    <div class='mx-auto d-flex'>
+    <div class='mx-auto d-none d-lg-flex'>
       {#each navBar.SOCIAL_NETWORKS as item}
         <div class={`fw-bold ${navBar.STYLE.SOCIAL_NETWORKS.bootstrapClass}`}>
           <a class="" target={item.target} href={item.redirect}>
@@ -42,7 +42,7 @@
       {/each}
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"><i class="bi bi-list"></i></span>
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto align-items-center">
