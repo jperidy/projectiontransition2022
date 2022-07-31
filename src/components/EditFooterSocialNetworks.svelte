@@ -88,7 +88,7 @@
                         {#if loadingImage}
                             <Loading />
                         {:else}
-                            <img class='img-fluid bg-light rounded' src={snIcon} alt={snAlt} style="width:7vh;height:7vh;" />
+                            <img class='img-fluid bg-light rounded' src={config.STATIC_SERVER_URL + snIcon} alt={snAlt} style="width:7vh;height:7vh;" />
                         {/if}
                     {:else}
                         <div class="d-flex bg-light rounded justify-content-center text-center align-items-center text-dark" style="height: 7vh;width:7vh;">No image</div>
@@ -129,7 +129,7 @@
                     {#if loadingImage}
                         <Loading />
                     {:else}
-                        <img class='img-fluid bg-light rounded' src={item.icon} alt={snAlt} style="width:7vh;height:7vh;"/>
+                        <img class='img-fluid bg-light rounded' src={config.STATIC_SERVER_URL + item.icon} alt={snAlt} style="width:7vh;height:7vh;"/>
                     {/if}
                 </div>
                 <div class="col my-auto">

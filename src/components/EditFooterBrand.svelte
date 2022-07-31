@@ -36,7 +36,7 @@
         {#if loadingImage}
             <Loading />
         {:else}
-            <img class="img-fluid rounded" src={footer.BRAND.LOGO.path} alt={footer.BRAND.LOGO.alt}>
+            <img class="img-fluid rounded" src={config.STATIC_SERVER_URL + footer.BRAND.LOGO.path} alt={footer.BRAND.LOGO.alt}>
         {/if}
     </div>
     <div class="col">

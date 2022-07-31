@@ -1,6 +1,6 @@
 <script>
     import { goto } from "$app/navigation";
-    import config from '$src/config.json'
+    import config from '$src/config.json';
     
     export let footer;
     
@@ -15,7 +15,7 @@
                 <a href="#up">
                     <img 
                         class='img-fluid mx-2'
-                        src={footer.BRAND.LOGO.path}
+                        src={config.STATIC_SERVER_URL + footer.BRAND.LOGO.path}
                         alt={footer.BRAND.LOGO.alt}
                         style={footer.BRAND.LOGO.style}
                     />
@@ -42,7 +42,7 @@
                                     <img 
                                         class={footer.STYLE.SOCIAL_NETWORKS.bootstrapClass} 
                                         style={footer.STYLE.SOCIAL_NETWORKS.style} 
-                                        src={item.icon} 
+                                        src={config.STATIC_SERVER_URL + item.icon} 
                                         alt={item.alt} 
                                     />
                                 </a>

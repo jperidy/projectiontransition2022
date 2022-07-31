@@ -88,7 +88,7 @@
                     class='img-fluid rounded bg-light' 
                     style="min-height: 5vh;" 
                     id="default-og-image" 
-                    src={seo.DEFAULT_OG_IMAGE} 
+                    src={config.STATIC_SERVER_URL + seo.DEFAULT_OG_IMAGE} 
                     alt={seo.DEFAULT_OG_TITLE} 
                 />
             {/if}

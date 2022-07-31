@@ -7,16 +7,9 @@ node_modules
 .env.*
 !.env.example
 .env
-public/uploads/*
-!public/uploads/.gitkeep
 
 static_server/public/*
 config.json
-# !static_server/public/.gitkeep
-# static_server/public/uploads/*.jpg
-# static_server/public/uploads/*.jpeg
-# static_server/public/uploads/*.png
-# static_server/public/uploads/*.zip
 
 _backup-mongodb
 migrations

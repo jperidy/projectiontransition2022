@@ -1,5 +1,6 @@
 import path from 'path';
 import { appendFileSync, unlinkSync } from 'node:fs';
+import config from '$src/config.json';
 
 export async function POST({ url, request: req }) {
 
@@ -7,7 +8,7 @@ export async function POST({ url, request: req }) {
         const fileName = url.searchParams.get('fileName');
         const __dir = path.resolve();
     
-        const storage = `${__dir}/public/uploads/${fileName}`;
+        const storage = `${__dir}${config.STATIC_FILE_LOCATION}/uploads/${fileName}`;
     
         const stream = req.body.getReader();
     
@@ -33,7 +34,7 @@ export async function POST({ url, request: req }) {
 export async function DELETE({ url }) {
     try {
         const name = url.searchParams.get('url');
-        const directory = path.resolve() + '/public';
+        const directory = path.resolve() + config.STATIC_FILE_LOCATION;
 
         unlinkSync(directory + name);
 

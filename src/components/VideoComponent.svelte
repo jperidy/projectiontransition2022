@@ -93,9 +93,9 @@
                 {#if !values[0].url}
                     <div class='video-local-dimension' style={`max-width:${styles.filter(x => x.name === 'maxWidth')[0].value};${textAlign};`}>
                         <video class='video-insert' controls >
-                            <source src={values[1].url} type="video/mp4">
-                            <source src={values[1].url} type="video/webm">
-                            <source src={values[1].url} type="video/ogg">
+                            <source src={config.STATIC_SERVER_URL + values[1].url} type="video/mp4">
+                            <source src={config.STATIC_SERVER_URL + values[1].url} type="video/webm">
+                            <source src={config.STATIC_SERVER_URL + values[1].url} type="video/ogg">
                             <track default kind="captions"/>
                             Sorry, your browser doesn't support embedded videos.
                         </video>
@@ -108,9 +108,9 @@
                     {#if local}
                         <div class='video-local-dimension' style={`max-width:${styles.filter(x => x.name === 'maxWidth')[0].value};${textAlign};`}>
                             <video class='video-insert' controls >
-                                <source src={values[1].url} type="video/mp4">
-                                <source src={values[1].url} type="video/webm">
-                                <source src={values[1].url} type="video/ogg">
+                                <source src={config.STATIC_SERVER_URL + values[1].url} type="video/mp4">
+                                <source src={config.STATIC_SERVER_URL + values[1].url} type="video/webm">
+                                <source src={config.STATIC_SERVER_URL + values[1].url} type="video/ogg">
                                 <track default kind="captions"/>
                                 Sorry, your browser doesn't support embedded videos.
                             </video>
