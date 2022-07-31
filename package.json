@@ -4,7 +4,7 @@
 	"scripts": {
 		"dev": "vite dev --port 3001",
 		"build": "vite build",
-		"start": "PORT=3001 node build && npm run start --prefix static_server",
+		"start": "concurrently \"PORT=3001 node build\" \"npm run start --prefix static_server\"",
 		"deploy:web": "PORT=3001 pm2 start build/index.js --name projectionTransition2022-web --watch",
 		"undeploy:web": "pm2 stop projectionTransition2022-web",
 		"package": "svelte-kit package",
@@ -35,6 +35,7 @@
 		"bootstrap": "^5.2.0",
 		"bootstrap-icons": "^1.9.1",
 		"chart.js": "^3.8.0",
+		"concurrently": "^7.3.0",
 		"jsonwebtoken": "^8.5.1",
 		"leaflet": "^1.8.0",
 		"mongoose": "^6.4.6",

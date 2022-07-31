@@ -4,6 +4,7 @@
     import { getFonts } from '../actions/fontsActions';
     import { getNavBar } from '../actions/navActions';
     import { getFooter } from "../actions/footerActions";
+    import config from '$src/config.json';
     
     export async function load({}) {
 
@@ -40,11 +41,11 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="icon" type="image/png" href={seo.FAVICON_48_48} sizes="48x48" />
-    <link rel="icon" type="image/png" href={seo.FAVICON_64_64} sizes="64x64" />
-    <link rel="icon" type="image/png" href={seo.FAVICON_96_96} sizes="96x96" />
-    <link rel="icon" type="image/png" href={seo.FAVICON_128_128} sizes="128x128" />
-    <link rel="icon" type="image/png" href={seo.FAVICON_196_196} sizes="196x196" />
+    <link rel="icon" type="image/png" href={config.STATIC_SERVER_URL + seo.FAVICON_48_48} sizes="48x48" />
+    <link rel="icon" type="image/png" href={config.STATIC_SERVER_URL + seo.FAVICON_64_64} sizes="64x64" />
+    <link rel="icon" type="image/png" href={config.STATIC_SERVER_URL + seo.FAVICON_96_96} sizes="96x96" />
+    <link rel="icon" type="image/png" href={config.STATIC_SERVER_URL + seo.FAVICON_128_128} sizes="128x128" />
+    <link rel="icon" type="image/png" href={config.STATIC_SERVER_URL + seo.FAVICON_196_196} sizes="196x196" />
     
     <!-- work in progress to add fonts from googleapis -->
     {#if fonts && fonts.length > 0}
