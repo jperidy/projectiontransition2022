@@ -25,10 +25,10 @@
 </script>
 
 <script>
-    import Nav from '../components/Nav.svelte';
-    import Footer from '../components/Footer.svelte';
 
     import '../mains.min.css';
+    import Nav from '../components/nav/Nav.svelte';
+    import Footer from '../components/footer/Footer.svelte';
 
     export let seo;
     export let fonts;

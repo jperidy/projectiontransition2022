@@ -46,11 +46,11 @@
     import EditFaviconComponent from "../components/admin/EditFaviconComponent.svelte";
     import EditFooter from "../components/admin/EditFooter.svelte";
     import config from '../config.json';
-    import Footer from '../components/Footer.svelte';
-    import Nav from '../components/Nav.svelte';
     import SeoComponent from '../components/SeoComponent.svelte';
     import '../mains.min.css';
     import LeavingHandler from "../components/admin/LeavingHandler.svelte";
+    import Nav from '../components/nav/Nav.svelte';
+    import Footer from '../components/footer/Footer.svelte';
     
     export let defaultSeo;
     export let fonts;

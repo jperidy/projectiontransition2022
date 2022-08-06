@@ -1,12 +1,11 @@
 <script>
-  import Message from './Message.svelte';
+  import Message from '$components/Message.svelte';
   import config from '$src/config.json';
 
   let messageUpdateNav = '';
   let messageUpdateSeo = '';
 
   export let navBar;
-
 </script>
 
 {#if messageUpdateNav}
@@ -46,10 +45,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto align-items-center">
-        {#each navBar.TITLE as item}
+        {#each navBar.TITLE as item, ind}
         <li class="nav-item">
           <a 
-            class={`nav-link active ${navBar.STYLE.TITLE.bootstrapClass}`}
+            class={`nav-link active ${ind === navBar.TITLE.length-1 ? 'text-outremer' : navBar.STYLE.TITLE.bootstrapClass}`}
             style={navBar.STYLE.TITLE.style}
             aria-current="page" 
             href={item.url}
@@ -60,3 +59,11 @@
     </div>
   </div>
 </nav>
+
+<style>
+  .nav-item:last-child {
+    background-color: white;
+    border-radius: 8px;
+    color: #3C3F78;
+  }
+</style>

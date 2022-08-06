@@ -12,7 +12,7 @@ $black:    #000;
 
 $lavande:       #7c79b9;
 $ambre:         #fbdd2d;
-$outremer:      #2c3f78;
+$outremer:      #3c3f78;
 
 $blue:    #3c3f78;
 $indigo:  #6610f2;
@@ -150,7 +150,8 @@ $form-file-button-color:                $gray-600;
     margin: 0px;
 }
 main {
-    background-image: url('../static/images/fond.jpeg');
+    // background-image: url('../static/images/fond.jpeg');
+    background-color: $outremer;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
