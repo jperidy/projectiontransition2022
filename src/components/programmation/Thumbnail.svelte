@@ -10,7 +10,7 @@
         style="background-image: url({config.STATIC_SERVER_URL}/2022/programmation/{film.image});"
         on:click={() => goto(`${film.redirect}-${film.city}`)}
     >
-        <div class={`film-wrapper d-flex flex-column ${film.styles.color}`}>
+        <div class={`film-wrapper d-flex flex-column p-3 rounded ${film.styles.color}`}>
             <h1>{film.title}</h1>
             <div class="author">de {film.author}</div>
             <div class="description">{film.description}</div>
@@ -39,5 +39,6 @@
     .film-wrapper {
         max-width: 300px;
         margin: auto;
+        background-color: rgba(255, 255, 255, 0.6);
     }
 </style>

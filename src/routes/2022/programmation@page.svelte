@@ -6,7 +6,7 @@
         sm: 10,
         md: 10,
         lg: 10,
-        xl: 10
+        xl: 10 
     }
     const filmList = [
         { title: 'title', description: 'description', image: '/image.png', redirect: '/new-page' },

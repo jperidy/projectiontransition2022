@@ -23,7 +23,7 @@ import SelecteCity from "./SelecteCity.svelte";
             description: 'description', 
             image: 'garcon-qui-dompta-le-vent.jpg', 
             redirect: '/pages/garcon-qui-dompta-le-vent',
-            styles: { color: "text-white"},
+            styles: { color: "text-dark"},
             cities: [
                 { city: CITIES.PARIS, day: DAYS.VENDREDI, moment: "14h"}, 
             ]
@@ -34,7 +34,7 @@ import SelecteCity from "./SelecteCity.svelte";
             description: 'description', 
             image: 'soleil-vert.jpeg', 
             redirect: '/pages/soleil-vert',
-            styles: { color: "text-white"},
+            styles: { color: "text-dark"},
             cities: [
                 { city: CITIES.PARIS, day: DAYS.VENDREDI, moment: "20h"}, 
             ]
@@ -45,7 +45,7 @@ import SelecteCity from "./SelecteCity.svelte";
             description: 'description', 
             image: 'en-guerre.jpeg', 
             redirect: '/pages/en-guerre',
-            styles: { color: "text-white"},
+            styles: { color: "text-dark"},
             cities: [
                 { city: CITIES.PARIS, day: DAYS.SAMEDI, moment: "14h"}, 
             ]
@@ -56,7 +56,7 @@ import SelecteCity from "./SelecteCity.svelte";
             description: 'description', 
             image: 'les-fils-de-lhomme.png', 
             redirect: '/pages/les-fils-de-l-homme',
-            styles: { color: "text-white"},
+            styles: { color: "text-dark"},
             cities: [
                 { city: CITIES.PARIS, day: DAYS.SAMEDI, moment: "20h"}, 
             ]
@@ -67,7 +67,7 @@ import SelecteCity from "./SelecteCity.svelte";
             description: 'description', 
             image: 'goliath.jpg', 
             redirect: '/pages/goliath',
-            styles: { color: "text-white"},
+            styles: { color: "text-dark"},
             cities: [
                 { city: CITIES.PARIS, day: DAYS.DIMANCHE, moment: "11h"}, 
             ]
@@ -78,7 +78,7 @@ import SelecteCity from "./SelecteCity.svelte";
             description: 'description', 
             image: 'sans-filtre.jpg', 
             redirect: '/pages/sans-filtre',
-            styles: { color: "text-white"},
+            styles: { color: "text-dark"},
             cities: [
                 { city: CITIES.PARIS, day: DAYS.DIMANCHE, moment: "11h"}, 
             ]
