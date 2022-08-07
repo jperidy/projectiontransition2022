@@ -9,6 +9,7 @@
 		"deploy": "npm run deploy:web && npm run deploy:static --prefix static_server",
 		"undeploy:web": "pm2 stop projectionTransition2022-web",
 		"undeploy": "npm run undeploy:web && npm run undeploy:static --prefix static_server",
+		"restart": "npm run build && npm run undeploy && npm run deploy",
 		"package": "svelte-kit package",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync",
