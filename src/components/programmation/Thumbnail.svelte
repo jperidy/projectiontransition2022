@@ -2,17 +2,20 @@
     import config from "$src/config.json";
     import { goto } from "$app/navigation";
     export let film;
-
 </script>
 
 <div class="wrapper col-12 col-md-6 col-lg-6 p-0 m-0 border border-5 border-outremer">
     <button 
-        class="button btn rounded shadow-lg w-100" 
+        class="button btn rounded-0 border-0 shadow-lg w-100" 
         style="background-image: url({config.STATIC_SERVER_URL}/2022/programmation/{film.image});"
-        on:click={() => goto(film.redirect)}
+        on:click={() => goto(`${film.redirect}-${film.city}`)}
     >
-        <div>{film.title}</div>
-        <div>{film.description}</div>
+        <div class={`film-wrapper d-flex flex-column ${film.styles.color}`}>
+            <h1>{film.title}</h1>
+            <div class="author">de {film.author}</div>
+            <div class="description">{film.description}</div>
+            <div class="moment">{film.moment}</div>
+        </div>
     </button>
 </div>
 
@@ -20,7 +23,6 @@
     .wrapper {
         overflow: hidden;
         height: 450px;
-        border-radius: 16px;
     }
     .button {
         width: 100%;
@@ -33,5 +35,9 @@
     .button:focus,
     .button:hover {
         transform: scale(1.2);
+    }
+    .film-wrapper {
+        max-width: 300px;
+        margin: auto;
     }
 </style>

@@ -1,28 +1,87 @@
 <script>
-    import SelecteCity from "./SelecteCity.svelte";
+    import A from "../../routes/pages/[...data]@page.svelte";
+import SelecteCity from "./SelecteCity.svelte";
     import Thumbnail from "./Thumbnail.svelte";
+
+    const CITIES = {
+        PARIS: "Paris",
+        NANTES: 'Nantes',
+        TOULOUSE: 'Toulouse',
+        BRUXELLES: 'Bruxelles',
+    }
+
+    const DAYS = {
+        VENDREDI: 'Vendredi 14 octobre',
+        SAMEDI: 'Samedi 15 octobre',
+        DIMANCHE: 'Dimanche 15 octobre',
+    }
 
     const filmList = [
         { 
-            title: 'title', 
+            title: 'Le garçon qui dompta le vent',
+            author: 'Chiwetel Ejiofor', 
             description: 'description', 
-            image: 'VIGNETTE_COMBATTANTS_spiraleopaque_2.jpeg', 
-            redirect: '/pages/film1',
-            cities: ["Paris", "Toulouse", "Nantes"]
+            image: 'garcon-qui-dompta-le-vent.jpg', 
+            redirect: '/pages/garcon-qui-dompta-le-vent',
+            styles: { color: "text-white"},
+            cities: [
+                { city: CITIES.PARIS, day: DAYS.VENDREDI, moment: "14h"}, 
+            ]
         },
         { 
-            title: 'title', 
+            title: 'Soleil vert',
+            author: 'Richard Fleischer', 
             description: 'description', 
-            image: 'VIGNETTE_DARKWATERS_spiraleopaque.jpeg', 
-            redirect: '/pages/film2',
-            cities: ["Paris"],
+            image: 'soleil-vert.jpeg', 
+            redirect: '/pages/soleil-vert',
+            styles: { color: "text-white"},
+            cities: [
+                { city: CITIES.PARIS, day: DAYS.VENDREDI, moment: "20h"}, 
+            ]
         },
         { 
-            title: 'title', 
+            title: 'En guerre',
+            author: 'Stéphane Brizé', 
             description: 'description', 
-            image: 'VIGNETTE_DARKWATERS_spiraleopaque.jpeg', 
-            redirect: '/pages/film2',
-            cities: ["Paris"],
+            image: 'en-guerre.jpeg', 
+            redirect: '/pages/en-guerre',
+            styles: { color: "text-white"},
+            cities: [
+                { city: CITIES.PARIS, day: DAYS.SAMEDI, moment: "14h"}, 
+            ]
+        },
+        { 
+            title: "Les fils de l'homme",
+            author: 'Alfonso Cuarón', 
+            description: 'description', 
+            image: 'les-fils-de-lhomme.png', 
+            redirect: '/pages/les-fils-de-l-homme',
+            styles: { color: "text-white"},
+            cities: [
+                { city: CITIES.PARIS, day: DAYS.SAMEDI, moment: "20h"}, 
+            ]
+        },
+        { 
+            title: "Goliath",
+            author: 'Frédéric Tellier', 
+            description: 'description', 
+            image: 'goliath.jpg', 
+            redirect: '/pages/goliath',
+            styles: { color: "text-white"},
+            cities: [
+                { city: CITIES.PARIS, day: DAYS.DIMANCHE, moment: "11h"}, 
+            ]
+        },
+        { 
+            title: "Sans filtre",
+            author: 'Ruben Östlund', 
+            description: 'description', 
+            image: 'sans-filtre.jpg', 
+            redirect: '/pages/sans-filtre',
+            styles: { color: "text-white"},
+            cities: [
+                { city: CITIES.PARIS, day: DAYS.DIMANCHE, moment: "11h"}, 
+            ]
         },
     ];
 
@@ -35,14 +94,21 @@
     <SelecteCity bind:selectedCity/>
 </div>
 
-<div class="row">
-    <div class="col">
-        <h2 class="text-uppercase">Vendredi 14 octobre</h2>
+{#each Object.values(DAYS) as day }
+    <div class="row mt-3">
+        <div class="col">
+            <h2 class="text-uppercase">{day}</h2>
+        </div>
     </div>
-</div>
 
-<div class="row">
-    {#each filmList.filter((film) => film.cities.includes(selectedCity)) as film}
-        <Thumbnail film={film} />
-    {/each}
-</div>
+    <div class="row">
+        {#each filmList.filter(
+            (film) => film.cities.find((city) => city.city === selectedCity && city.day === day)
+        ) as film}
+            <Thumbnail film={{ 
+                ...film, 
+                ...film.cities.find((city) => city.city === selectedCity && city.day === day)
+            }} />
+        {/each}
+    </div>
+{/each}

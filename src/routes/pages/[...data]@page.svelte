@@ -23,11 +23,11 @@
             pageRequest = await getContent(pageName);
             
             if (pageRequest.content.content.length === 0) {
-                return { status: 307, redirect: `/page-not-found` }
+                return { status: 404, error: new Error(`Not found: ${url.pathname}`) }
             }
 
             if (!pageRequest.content.display) {
-                return { status: 307, redirect: `/page-not-found` }
+                return { status: 404, error: new Error(`Not available: ${url.pathname}`) }
             }
             
             return { status:200, props: {pageRequest, city, url, defaultSeo: seo} };

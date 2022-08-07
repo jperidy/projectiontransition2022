@@ -9,6 +9,7 @@ node_modules
 .env
 
 static_server/public/*
+!static_server/public/2022/
 config.json
 
 _backup-mongodb
