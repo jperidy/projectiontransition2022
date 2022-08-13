@@ -1,6 +1,9 @@
 import axios from 'axios';
 import { get } from 'svelte/store';
 import { userInfo } from '../store';
+import config from '../config.json';
+
+const API_URL = config.API_URL;
 
 export const getSeo = async () => {
 
@@ -13,7 +16,7 @@ export const getSeo = async () => {
             }
         };
 
-        const { data } = await axios.get(`/api/seo`, config);
+        const { data } = await axios.get(`${API_URL}/api/seo`, config);
 
         return { seo: data.value, loading: false, message: data.message };
 

@@ -5,8 +5,6 @@
     export let pageContent;
     export let url;
     export let defaultSeo;
-
-
 </script>
 
 <svelte:head>
