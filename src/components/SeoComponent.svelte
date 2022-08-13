@@ -4,7 +4,6 @@
 
     export let pageContent;
     export let url;
-    export let siteURL;
     export let defaultSeo;
 
 
@@ -19,7 +18,7 @@
 	<meta property="og:image" content={API_URL + defaultSeo.DEFAULT_OG_IMAGE} />
 	<meta property="og:image:width" content="800" />
 	<meta property="og:image:height" content="400" />
-	<meta property="og:url" content={`${siteURL}${url.pathname}`} />
+	<meta property="og:url" content={`${API_URL}${url.pathname}`} />
 	<meta property="og:locale" content="fr_FR" />
 	<meta name="twitter:image" content={API_URL + defaultSeo.DEFAULT_OG_IMAGE} />
 	<meta name="twitter:card" content="summary_large_image" />

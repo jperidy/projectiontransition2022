@@ -41,8 +41,6 @@
     import SeoComponent from '../../components/SeoComponent.svelte';
     import { logout, verifyLocalToken } from '../../actions/userActions';
     import { onMount } from 'svelte';
-
-    const SITE_URL = config.API_URL;
     
     export let filmRequest;
     export let id;
@@ -187,54 +185,6 @@
                         updateContent={updateFilm}
                     />
                 </div>
-                <!-- {#each filmRequest.film.actions as action, position}
-                    <MovingContent
-                        array={filmRequest.film.actions} 
-                        position={position} 
-                        admin={admin} 
-                        updateMovedArray={updateMovedArray}
-                    >
-                    <div class='row mt-3'>
-                        <div class='col-2'>
-                            <div class='text-center'>
-                                <TextComponent
-                                    bind:values={action.heure.values}
-                                    bind:styles={action.heure.styles}
-                                    admin={admin}
-                                    edit={edit}
-                                    updateContent={updateFilm}
-                                />
-                            </div>
-                        </div>
-                        <div class='col-10'>
-                                    <TextComponent
-                                        bind:values={action.titre.values}
-                                        bind:styles={action.titre.styles}
-                                        admin={admin}
-                                        edit={edit}
-                                        updateContent={updateFilm}
-                                    />
-                                    <TextComponent
-                                        bind:values={action.description.values}
-                                        bind:styles={action.description.styles}
-                                        admin={admin}
-                                        edit={edit}
-                                        updateContent={updateFilm}
-                                    />
-                                    <TextComponent
-                                        bind:values={action.complement.values}
-                                        bind:styles={action.complement.styles}
-                                        admin={admin}
-                                        edit={edit}
-                                        updateContent={updateFilm}
-                                    />
-                        </div>
-                    </div>
-                    </MovingContent>
-                {/each}
-                {#if admin}
-                    <button class='btn btn-primary text-center' on:click={addActionHandler}>Add an action</button>
-                {/if} -->
             </div>
 
             <div class='row mt-3'>
@@ -291,7 +241,6 @@
             <SeoComponent
                 pageContent={filmRequest.film}
                 page={page}
-                siteURL={SITE_URL}
                 defaultSeo={defaultSeo}
             />
         </CustomContainer>

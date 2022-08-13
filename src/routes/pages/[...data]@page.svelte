@@ -44,9 +44,6 @@
     export let pageRequest;
     export let url;
     export let defaultSeo;
-
-    import config from '../../config.json';
-    const SITE_URL = config.API_URL;
     
     import DisplayCustomComponent from '../../components/DisplayCustomComponent.svelte';
     import Message from '../../components/Message.svelte';
@@ -91,7 +88,6 @@
         <SeoComponent 
             pageContent={pageRequest.content}
             url={url}
-            siteURL={SITE_URL}
             defaultSeo={defaultSeo}
         />  
     </div>

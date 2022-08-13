@@ -249,7 +249,6 @@
         <SeoComponent 
             pageContent={page.content}
             url={url}
-            siteURL={config.API_URL}
             defaultSeo={defaultSeo}
         />  
     {/if} 
