@@ -29,9 +29,6 @@
     let selectedPages = [];    
 
     onMount(() => {
-
-        // upload in the store all the pages
-        //getAllpages();
         getStatistics("", "", []);
 
         ctx = document.getElementById('statisticsChart').getContext('2d');
@@ -66,10 +63,6 @@
                     }
                 });
             }
-            console.log($statisticsSendRequest);
-            //startDate = $statisticsSendRequest.data.labels[0];
-            //endDate = $statisticsSendRequest.data.labels[$statisticsSendRequest.data.labels.length-1];
-            //endDate = $statisticsSendRequest.data.end.substring(0,10);
             statisticsChart.update();
         }
     };
@@ -113,17 +106,6 @@
                 </div>
             </div>
         {/if}
-        <!-- {#if $statisticsAllPages.data}
-            <div class='row mb-3'>
-                <div class="col">
-                    <select class="form-select" multiple aria-label="multiple select pages" bind:value={selectedPages}>
-                        {#each $statisticsAllPages.data as page}
-                            <option value={page}>{page}</option>
-                        {/each}
-                    </select>
-                </div>
-            </div>
-        {/if} -->
         
         <div class='row'>
             <div class='col text-start'>

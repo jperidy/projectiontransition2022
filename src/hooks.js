@@ -1,6 +1,7 @@
 import connectDB from './database/db';
 import { verifyAuthentication } from './services/api/authentication';
 import config from './config.json';
+import Log from './database/models/logModel';
 
 const admins = [
     { methods: ['POST'], uri: /^\/api\/seo$/ },
@@ -29,20 +30,27 @@ const authentication = async (event) => {
     return true;
 }
 
+const registerLogs = async (event) => {
+    if (!event.url.pathname.match(/\/api\//i)) {
+        await Log.create({
+            type: 'page',
+            target: event.url.pathname
+        })
+    }
+}
+
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event, resolve }) {
-    if (!config.SVELTE_ENV === 'production') {
-        console.log('DEBUG:', event.request.method, event.url.pathname);
+    if (!(config.SVELTE_ENV === 'production')) {
+        console.log('DEBUG:', event.request.method, event.url.href);
     }
-
     try {
         await connectDB();
-    
+        await registerLogs(event)
         const isAuhtenticated = await authentication(event);
         if (!isAuhtenticated) {
             return new Response('Token not valid');
         }
-        
         return resolve(event);
     } catch (error) {
         console.log("Error in hooks", error);
