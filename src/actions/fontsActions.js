@@ -1,6 +1,9 @@
 import axios from 'axios';
 import { get } from 'svelte/store';
 import { userInfo } from '../store';
+import config from '../config.json';
+
+const API_URL = config.API_URL;
 
 export const getFonts = async () => {
 
@@ -12,7 +15,7 @@ export const getFonts = async () => {
             }
         };
 
-        const { data } = await axios.get(`/api/fonts`, config);
+        const { data } = await axios.get(`${API_URL}/api/fonts`, config);
 
         return { fonts: data.value, loading: false, message: data.message };
 
@@ -36,7 +39,7 @@ export const updateOrCreateFont = async (font) => {
             }
         };
 
-        const { data } = await axios.post(`/api/fonts`, font, config);
+        const { data } = await axios.post(`${API_URL}/api/fonts`, font, config);
 
         return { font: data.value, loading: false, message: data.message };
 
@@ -59,7 +62,7 @@ export const deleteAFont = async (font) => {
             }
         };
 
-        const { data } = await axios.delete(`/api/fonts/${font._id}`, config);
+        const { data } = await axios.delete(`${API_URL}/api/fonts/${font._id}`, config);
 
         return { font: data.value, loading: false, message: data.message };
 

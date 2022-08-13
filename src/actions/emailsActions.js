@@ -1,5 +1,8 @@
 import axios from 'axios';
 import { emailSendRequest } from '../store';
+import config from '../config.json';
+
+const API_URL = config.API_URL;
 
 export const sendContactEmail = async (email) => {
 
@@ -13,7 +16,7 @@ export const sendContactEmail = async (email) => {
             }
         };
 
-        await axios.post(`/api/emails`, email, config);
+        await axios.post(`${API_URL}/api/emails`, email, config);
         
         emailSendRequest.set({success:true, loading:false, message:'Message envoyé ! Nous revenons vers vous rapidement.'});
 

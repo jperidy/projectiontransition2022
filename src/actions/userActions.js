@@ -1,5 +1,8 @@
 import axios from 'axios';
 import { userInfo } from '../store';
+import config from '../config.json';
+
+const API_URL = config.API_URL;
 
 export const login = async ({email, password}) => {
 
@@ -12,7 +15,7 @@ export const login = async ({email, password}) => {
             }
         };
 
-        const { data }  = await axios.post(`/api/users/login`, {email: email, password: password}, config);
+        const { data }  = await axios.post(`${API_URL}/api/users/login`, {email: email, password: password}, config);
         
         const userInfo = { ...data };
 
@@ -43,7 +46,7 @@ export const verifyLocalToken = async (token) => {
             }
         };
 
-        const { data }  = await axios.post(`/api/users/verify`, {}, config);
+        const { data }  = await axios.post(`${API_URL}/api/users/verify`, {}, config);
         
         return { status: 'Ok', data: data};
 

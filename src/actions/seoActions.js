@@ -39,7 +39,7 @@ export const updateOrCreateSeo = async (seo) => {
             }
         };
 
-        const { data } = await axios.post(`/api/seo`, seo, config);
+        const { data } = await axios.post(`${API_URL}/api/seo`, seo, config);
 
         return { seo: data.value, loading: false, message: data.message };
 
