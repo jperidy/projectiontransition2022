@@ -1,7 +1,7 @@
 <script>
-    import Message from "./Message.svelte";
+    import Message from "$components/Message.svelte";
+
     export let footer;
-    // export let updateOrCreateFooter;
 
     let messageUpdateFooter;
 
@@ -21,32 +21,20 @@
         footer = footer;
         navName = '';
         navUrl = '';
-        // updateOrCreateFooter(footer)
-        // .then((result) => footer = result.footer)
-        // .catch((error) => messageUpdateFooter = error);
     };
 
     const deleteNavigation = (index) => {
         footer.TITLE.splice(index, 1);
         footer = footer;
-    // updateOrCreateFooter(footer)
-    //   .then((result) => footer = result.footer)
-    //   .catch((error) => messageUpdateFooter = error);
     };
     const upNavigation = (index) => {
         if (index > 0) {
         footer.TITLE = arrayMove(footer.TITLE, index, index - 1);
-        // updateOrCreateFooter(footer)
-        //     .then((result) => footer = result.footer)
-        //     .catch((error) => messageUpdateFooter = error);
         }
     };
     const downNavigation = (index) => {
         if (index < footer.TITLE.length - 1) {
         footer.TITLE = arrayMove(footer.TITLE, index, index + 1);
-        // updateOrCreateFooter(footer)
-        //     .then((result) => footer = result.footer)
-        //     .catch((error) => messageUpdateFooter = error);
         }
     };
 </script>

@@ -1,10 +1,10 @@
 <script>
-    import { imagesFormats } from '../constants/files';
+	import config from '$src/config.json';
 
-    import Message from './Message.svelte';
-    import Loading from './Loading.svelte';
-    import { uploadFile } from '../actions/uploadActions';
-    import config from '$src/config';
+    import Message from '$components/Message.svelte';
+    import Loading from '$components/Loading.svelte';
+    import { uploadFile } from '$actions/uploadActions';
+    import { imagesFormats } from '$constants/files';
 
     export let footer;
     
@@ -18,7 +18,7 @@
         const fileName = Date.now() + '_' + file.name;
 
         const { error, path } = await uploadFile(file, fileName, footer.BRAND.LOGO.path, imagesFormats);
-      
+
         messageUpdateBrand = error;
         footer.BRAND.LOGO.path = `/uploads/${fileName}`;
         footer = footer;

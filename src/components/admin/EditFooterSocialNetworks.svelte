@@ -1,9 +1,9 @@
 <script>
-    import Message from "./Message.svelte";
-    import config from '../config.json';
-    import { uploadFile } from "../actions/uploadActions";
-    import Loading from "./Loading.svelte";
-    import { imagesFormats } from "../constants/files";
+	import config from '$src/config.json';
+	import { uploadFile } from '$actions/uploadActions.js';
+	import { imagesFormats } from '$constants/files.js';
+    import Message from "$components/Message.svelte";
+    import Loading from "$components/Loading.svelte";
     
 
     export let footer;

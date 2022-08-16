@@ -1,7 +1,7 @@
 <script>
-  import { recursiveBlankMedias } from "../utils/imageFunctions";
+  import { recursiveBlankMedias } from "$utils/imageFunctions";
   
-  import { copyComponent } from "../store";
+  import { copyComponent } from "$src/store";
   import { get } from "svelte/store";
   
   export let action = null;
@@ -43,6 +43,75 @@
     type = typeComponent;
     updateValues();
   };
+
+  const componentList = [
+    { 
+      category: 'standard', 
+      type: 'layoutComponent', 
+      title: "Add a frame in your page to host another components like Text, Image, Video",
+      icon: "bi bi-grid-1x2"
+    },
+    { 
+      category: 'standard', 
+      type: 'textComponent', 
+      title: "Add a text in your page or in your frame (recommended)",
+      icon: "bi bi-type"
+    },
+    { 
+      category: 'standard', 
+      type: 'imageComponent', 
+      title: "Add an image in your page or in your frame (recommended)",
+      icon: "bi bi-image"
+    },
+    { 
+      category: 'standard', 
+      type: 'videoComponent', 
+      title: "Add a video in your page or in your frame (recommended)",
+      icon: "bi bi-youtube"
+    },
+    { 
+      category: 'standard', 
+      type: 'compressComponent', 
+      title: "Upload a compressed file that user can download in your page or in your frame (recommended)",
+      icon: "bi bi-file-earmark-arrow-up"
+    },
+    { 
+      category: 'standard', 
+      type: 'sousligneComponent', 
+      title: "Add a line form in your page or in your frame (recommended)",
+      icon: "bi bi-dash"
+    },
+    { 
+      category: 'standard', 
+      type: 'multiLayerComponent', 
+      title: "Add a multi-layer form in your page or in your frame (recommended)",
+      icon: "bi bi-stack"
+    },
+    { 
+      category: 'standard', 
+      type: 'buttonComponent', 
+      title: "Add a button in your page or in your frame (recommended)",
+      icon: "bi bi-hand-index-thumb-fill"
+    },
+    { 
+      category: 'custom', 
+      type: 'contactComponent', 
+      title: "Add a contact form in your page or in your frame (recommended)",
+      icon: "bi bi-envelope"
+    },
+    { 
+      category: 'custom', 
+      type: 'carouselComponent', 
+      title: "Add a carousel in your page or in your frame (recommended)",
+      icon: "bi bi-images"
+    },
+    { 
+      category: 'custom', 
+      type: 'infoComponent', 
+      title: "Add a component in your page or in your frame (recommended) with information on your event : map, price, others informations",
+      icon: "bi bi-geo-alt"
+    },
+  ]
   
 </script>
 
@@ -72,126 +141,32 @@
               {#if !past}
                 <div class='mt-3 d-grid gap-2 d-sm-block'>
                   <h3>Standard components: </h3>
-                  <button 
-                    class={`btn ${type === 'layoutComponent' ? 'btn-primary' : 'btn-light'}  btn-lg`} 
-                    on:click={() => handleClick('layoutComponent')}
-                    data-bs-toggle="tooltip" 
-                    data-bs-placement="right" 
-                    title="Add a frame in your page to host another components like Text, Image, Video"
-                    >
-                    <i class="bi bi-grid-1x2"></i>
-                  </button>
-                  <button 
-                    class={`btn ${type === 'textComponent' ? 'btn-primary' : 'btn-light'}  btn-lg`} 
-                    on:click={() => handleClick('textComponent')}
-                    data-bs-toggle="tooltip" 
-                    data-bs-placement="right" 
-                    title="Add a text in your page or in your frame (recommended)"
-                    >
-                    <i class="bi bi-type"></i>
-                  </button>
-                  <button 
-                    class={`btn ${type === 'imageComponent' ? 'btn-primary' : 'btn-light'}  btn-lg`}  
-                    on:click={() => handleClick('imageComponent')}
-                    data-bs-toggle="tooltip" 
-                    data-bs-placement="right" 
-                    title="Add an image in your page or in your frame (recommended)"
-                    >
-                    <i class="bi bi-image"></i>
-                  </button>
-                  <button 
-                    class={`btn ${type === 'videoComponent' ? 'btn-primary' : 'btn-light'}  btn-lg`}  
-                    on:click={() => handleClick('videoComponent')}
-                    data-bs-toggle="tooltip" 
-                    data-bs-placement="right" 
-                    title="Add a video in your page or in your frame (recommended)"
-                    >
-                    <i class="bi bi-youtube"></i>
-                  </button>
-                  <button 
-                    class={`btn ${type === 'compressComponent' ? 'btn-primary' : 'btn-light'}  btn-lg`}  
-                    on:click={() => handleClick('compressComponent')}
-                    data-bs-toggle="tooltip" 
-                    data-bs-placement="right" 
-                    title="Upload a compressed file that user can download in your page or in your frame (recommended)"
-                    >
-                    <i class="bi bi-file-earmark-arrow-up"></i>
-                  </button>
-                  <button 
-                    class={`btn ${type === 'sousligneComponent' ? 'btn-primary' : 'btn-light'}  btn-lg`}  
-                    on:click={() => handleClick('sousligneComponent')}
-                    data-bs-toggle="tooltip" 
-                    data-bs-placement="right" 
-                    title="Add a line form in your page or in your frame (recommended)"
-                    >
-                    <i class="bi bi-dash"></i>
-                  </button>
-                  <button 
-                    class={`btn ${type === 'multiLayerComponent' ? 'btn-primary' : 'btn-light'}  btn-lg`}  
-                    on:click={() => handleClick('multiLayerComponent')}
-                    data-bs-toggle="tooltip" 
-                    data-bs-placement="right" 
-                    title="Add a multi-layer form in your page or in your frame (recommended)"
-                    >
-                    <i class="bi bi-stack"></i>
-                  </button>
+                  {#each componentList.filter((component) => component.category === 'standard')  as component}
+                    <button 
+                      class={`btn ${type === component.type ? 'btn-primary' : 'btn-light'}  btn-lg`} 
+                      on:click={() => handleClick(component.type)}
+                      data-bs-toggle="tooltip" 
+                      data-bs-placement="right" 
+                      title={component.title}
+                      >
+                      <i class={component.icon}></i>
+                    </button>
+                  {/each}
                 </div>
+
                 <div class='mt-3 d-grid gap-2 d-sm-block'>
                   <h3>Custom components: </h3>
-                  <button 
-                    class={`btn ${type === 'contactComponent' ? 'btn-primary' : 'btn-light'}  btn-lg`}  
-                    on:click={() => handleClick('contactComponent')}
-                    data-bs-toggle="tooltip" 
-                    data-bs-placement="right" 
-                    title="Add a contact form in your page or in your frame (recommended)"
-                    >
-                    <i class="bi bi-envelope"></i>
-                  </button>
-                  <button 
-                    class={`btn ${type === 'carouselComponent' ? 'btn-primary' : 'btn-light'}  btn-lg`}  
-                    on:click={() => handleClick('carouselComponent')}
-                    data-bs-toggle="tooltip" 
-                    data-bs-placement="right" 
-                    title="Add a carousel in your page or in your frame (recommended)"
-                    >
-                    <i class="bi bi-images"></i>
-                  </button>
-                  <button 
-                    class={`btn ${type === 'editoComponent' ? 'btn-primary' : 'btn-light'}  btn-lg`}  
-                    on:click={() => handleClick('editoComponent')}
-                    data-bs-toggle="tooltip" 
-                    data-bs-placement="right" 
-                    title="Add an edito composition in your page or in your frame (recommended)"
-                    >
-                    <i class="bi bi-megaphone"></i>
-                  </button>
-                  <button 
-                    class={`btn ${type === 'programmationComponent' ? 'btn-primary' : 'btn-light'}  btn-lg`}  
-                    on:click={() => handleClick('programmationComponent')}
-                    data-bs-toggle="tooltip" 
-                    data-bs-placement="right" 
-                    title="Add a programmation component in your page or in your frame (recommended) : create a frame with all films and links to pre-built pages with complete films details"
-                    >
-                    <i class="bi bi-film"></i>
-                  </button>
-                  <button 
-                    class={`btn ${type === 'infoComponent' ? 'btn-primary' : 'btn-light'}  btn-lg`}  
-                    on:click={() => handleClick('infoComponent')}
-                    data-bs-toggle="tooltip" 
-                    data-bs-placement="right" 
-                    title="Add a component in your page or in your frame (recommended) with information on your event : map, price, others informations"
-                    >
-                    <i class="bi bi-geo-alt"></i>
-                  </button>
-                  <button 
-                    class={`btn ${type === 'articlesComponent' ? 'btn-primary' : 'btn-light'}  btn-lg`}  
-                    on:click={() => handleClick('articlesComponent')}
-                    data-bs-toggle="tooltip" 
-                    data-bs-placement="right" 
-                    title="Add an article component in your page or in your frame (recommended) : create a frame with all articles and link to pre-built pages with complete article (work in progress)"
-                    >
-                    <i class="bi bi-megaphone"></i>
-                  </button>
+                  {#each componentList.filter((component) => component.category === 'custom')  as component}
+                    <button 
+                      class={`btn ${type === component.type ? 'btn-primary' : 'btn-light'}  btn-lg`} 
+                      on:click={() => handleClick(component.type)}
+                      data-bs-toggle="tooltip" 
+                      data-bs-placement="right" 
+                      title={component.title}
+                      >
+                      <i class={component.icon}></i>
+                    </button>
+                  {/each}
                 </div>
               {/if}
             </div> 

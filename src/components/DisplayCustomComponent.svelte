@@ -1,21 +1,20 @@
 <script>
+	import EquipeComponent from '$components/EquipeComponent.svelte';
+	import PartenairesComponent from '$components/PartenairesComponent.svelte';
+	import EditoComponent from '$components/EditoComponent.svelte';
     
-    import TextComponent from "./TextComponent.svelte";
-    import ImageComponent from "./ImageComponent.svelte";
-    import CarouselComponent from "./CarouselComponent.svelte";
-    import VideoComponent from "./VideoComponent.svelte";
-    import EditoComponent from "./EditoComponent.svelte";
-    import ArticlesComponent from "./ArticlesComponent.svelte";
-    import PartenairesComponent from "./PartenairesComponent.svelte";
-    import LieuxComponent from "./LieuxComponent.svelte";
-    import ProgrammationComponent from "./ProgrammationComponent.svelte";
-    import EquipeComponent from "./EquipeComponent.svelte";
-    import ContactForm from "./ContactForm.svelte";
-    import LayoutComponent from "./LayoutComponent.svelte";
-    import SouslligneComponent from "./SouslligneComponent.svelte";
-    import CompressFileComponent from "./CompressFileComponent.svelte";
-    import MultiLayerComponent from "./MultiLayerComponent.svelte";
-    import { scrollingToElement } from "../utils/scrollingFunctin";
+    import TextComponent from "$components/TextComponent.svelte";
+    import ImageComponent from "$components/ImageComponent.svelte";
+    import CarouselComponent from "$components/CarouselComponent.svelte";
+    import VideoComponent from "$components/VideoComponent.svelte";
+    import LieuxComponent from "$components/LieuxComponent.svelte";
+    import ContactForm from "$components/ContactForm.svelte";
+    import LayoutComponent from "$components/LayoutComponent.svelte";
+    import SouslligneComponent from "$components/SouslligneComponent.svelte";
+    import CompressFileComponent from "$components/CompressFileComponent.svelte";
+    import MultiLayerComponent from "$components/MultiLayerComponent.svelte";
+    import { scrollingToElement } from "$utils/scrollingFunctin";
+    import ButtonComponent from "$components/ButtonComponent.svelte";
 
     export let type = '';
     export let updateContent = null;
@@ -101,6 +100,14 @@
         />
     {/if}
 
+    {#if type === 'buttonComponent'}
+        <ButtonComponent
+            bind:values={values}
+            bind:styles={styles}
+            isSelected={isSelected}
+        />
+    {/if}
+
     <!-- extract unit component Map and Dropdown -->
     {#if type === 'infoComponent'}
         <LieuxComponent
@@ -124,25 +131,8 @@
     {/if}
 
     <!-- custom components with automatics process -->
-    {#if type === 'articlesComponent'}
-        <ArticlesComponent
-            bind:values={values}
-            bind:styles={styles}
-            updateContent={updateContent}
-            admin={admin}
-            edit={edit}
-        />
-    {/if}
-    {#if type === 'programmationComponent'}
-        <ProgrammationComponent
-            bind:values={values}
-            bind:styles={styles}
-            updateContent={updateContent}
-            admin={admin}
-            edit={edit}
-            city={city}
-        />
-    {/if}
+
+
 
 
 
@@ -174,5 +164,4 @@
             edit={edit}
         />
     {/if}
-
 </div>

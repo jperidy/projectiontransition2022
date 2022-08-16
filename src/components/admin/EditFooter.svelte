@@ -3,11 +3,11 @@
 
     import { onMount } from "svelte";
     import Message from "../Message.svelte";
-    import EditFooterBrand from "../EditFooterBrand.svelte";
-    import EditFooterNavigation from "../EditFooterNavigation.svelte";
-    import EditFooterSocialNetworks from "../EditFooterSocialNetworks.svelte";
-    import EditFooterCopyrightComponent from "../EditFooterCopyrightComponent.svelte";
-    import EditFooterStyleComponent from "../EditFooterStyleComponent.svelte";
+    import EditFooterNavigation from "./EditFooterNavigation.svelte";
+    import EditFooterSocialNetworks from "./EditFooterSocialNetworks.svelte";
+    import EditFooterCopyrightComponent from "./EditFooterCopyrightComponent.svelte";
+    import EditFooterStyleComponent from "./EditFooterStyleComponent.svelte";
+    import EditFooterBrand from "./EditFooterBrand.svelte";
 
     let messageUpdateFooter = "";
     let loadingUpdate = false;

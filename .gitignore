@@ -11,6 +11,8 @@ node_modules
 static_server/public/*
 !static_server/public/2022/
 config.json
+config-docker.json
+volumes
 
 _backup-mongodb
 migrations

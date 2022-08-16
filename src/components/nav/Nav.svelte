@@ -16,7 +16,7 @@
 {/if}
 
 <!-- NavBar to display -->
-<nav class={`navbar navbar-expand-${navBar.STYLE.expand} navbar-${navBar.STYLE.color} bg-${navBar.STYLE.theme}`}>
+<nav class={`navbar fixed-top navbar-expand-${navBar.STYLE.expand} navbar-${navBar.STYLE.color} bg-${navBar.STYLE.theme}`}>
   <div class="container-fluid">
     <a class='navbar-brand' href="/">
       <img 
@@ -26,32 +26,47 @@
         alt={navBar.BRAND.LOGO.alt}
       />
     </a>
-    <div class='mx-auto d-none d-lg-flex'>
+    <div class='mx-auto d-none d-lg-flex align-items-center'>
       {#each navBar.SOCIAL_NETWORKS as item}
-        <div class={`fw-bold ${navBar.STYLE.SOCIAL_NETWORKS.bootstrapClass}`}>
+        <!-- <div class={`fw-bold ${navBar.STYLE.SOCIAL_NETWORKS.bootstrapClass}`}>
           <a class="" target={item.target} href={item.redirect}>
             <img 
-              class='icone-rs' 
               style={navBar.STYLE.SOCIAL_NETWORKS.style} 
               src={config.STATIC_SERVER_URL + item.icon} 
               alt={item.alt} 
             />
           </a>
+        </div> -->
+        <div class="mx-3">
+          <a target={item.target} href={item.redirect}>
+            <i 
+              class={item.bootstrapClass}
+              style={navBar.STYLE.SOCIAL_NETWORKS.style}
+            ></i>
+          </a>
         </div>
       {/each}
     </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navbarSupportedContent" 
+      aria-controls="navbarSupportedContent" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto align-items-center">
         {#each navBar.TITLE as item, ind}
-        <li class="nav-item">
+        <li class="nav-item active">
           <a 
-            class={`nav-link active ${ind === navBar.TITLE.length-1 ? 'text-outremer' : navBar.STYLE.TITLE.bootstrapClass}`}
+            class={`nav-link ${ind === navBar.TITLE.length-1 ? 'text-outremer' : navBar.STYLE.TITLE.bootstrapClass}`}
+            href={item.url}
             style={navBar.STYLE.TITLE.style}
             aria-current="page" 
-            href={item.url}
           >{item.name.toString()}</a>
         </li>
         {/each}

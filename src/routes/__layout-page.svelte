@@ -61,7 +61,9 @@
 
 <main>
     <Nav navBar={navBar}/>
-    <slot></slot>
+    <div class="m-0">
+        <slot></slot>
+    </div>
 </main>
 
 <footer>

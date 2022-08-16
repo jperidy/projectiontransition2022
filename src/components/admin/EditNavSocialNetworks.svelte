@@ -9,6 +9,7 @@
   import Message from '../Message.svelte';
 
   // Manage Social Network
+  let bootstrapClass = '';
   let snName = '';
   let snIcon = '';
   let snAlt = '';
@@ -27,7 +28,17 @@
 
   const addSocialNetwork = (e) => {
       e.preventDefault();
-      navBar.SOCIAL_NETWORKS = [ ...navBar.SOCIAL_NETWORKS, {"name": snName, "icon": snIcon, "alt": snAlt, "redirect": snRedirect, "target": newTarget ? '_blank' : ''}];
+      navBar.SOCIAL_NETWORKS = [ 
+        ...navBar.SOCIAL_NETWORKS, 
+        {
+          "bootstrapClass": bootstrapClass, 
+          "name": snName, 
+          "icon": snIcon, 
+          "alt": snAlt, 
+          "redirect": snRedirect, 
+          "target": newTarget ? 
+          '_blank' : ''
+        }];
       navBar = navBar;
       snName = "";
       snIcon = "";
@@ -98,9 +109,13 @@
               <div class="bg-light rounded text-center text-dark d-flex align-items-center justify-content-center" style="height: 5vh; width: 5vh;">X</div>
           {/if}
         </div>
-        <div class="col">
+        <!-- <div class="col">
           <label for="iconSN">Icon </label>
           <input type="file" class="form-control" id="iconSN" on:change={(e) => onSelectAnImageSocialNetwork(-1, e)}/>
+        </div> -->
+        <div class="col">
+          <label for="bootstrapClass">Bootstrap-class</label>
+          <input type="text" class="form-control" id="bootstrapClass" bind:value={bootstrapClass} placeholder="Ex. bi bi-facebook"/>
         </div>
         <div class="col">
           <label for="nameSN">Name</label>
@@ -130,14 +145,21 @@
     {#each navBar.SOCIAL_NETWORKS as item, ind}
       <div class='row border-top border-light'>
         <div class="col my-2 rounded">
-          {#if loadingImage}
+          <i 
+              class={`${item.bootstrapClass}`}
+              style={navBar.STYLE.SOCIAL_NETWORKS.style}
+          ></i>
+          <!-- {#if loadingImage}
             <Loading />
           {:else}
             <img class='img-fluid bg-light rounded' src={config.STATIC_SERVER_URL + item.icon} alt={snAlt} style="width: 5vh;" />
-          {/if}
+          {/if} -->
         </div>
-        <div class="col my-auto">
+        <!-- <div class="col my-auto">
           <input type="file" class="form-control" on:change={(e) => onSelectAnImageSocialNetwork(ind, e)}>
+        </div> -->
+        <div class="col my-auto">
+          <input type="text" class="form-control" bind:value={item.bootstrapClass}>
         </div>
         <div class="col my-auto">
           <input type="text" class="form-control" bind:value={item.name} >

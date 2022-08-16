@@ -14,6 +14,7 @@
     import EditVideoComponent from "./EditVideoComponent.svelte";
     import EditContactComponent from "./EditContactComponent.svelte";
     import { copyComponent } from "../../store";
+    import EditButtonComponent from "./EditButtonComponent.svelte";
 
     export let type;
     export let values;
@@ -200,6 +201,12 @@
             {/if}
             {#if type === 'contactComponent'}
                 <EditContactComponent
+                    bind:values={values}
+                    bind:styles={styles}
+                />
+            {/if}
+            {#if type === 'buttonComponent'}
+                <EditButtonComponent
                     bind:values={values}
                     bind:styles={styles}
                 />

@@ -1,9 +1,9 @@
 <script context='module'>
-    import { getSeo } from '../actions/seoActions';
-    import { getFonts } from '../actions/fontsActions';
-    import { getNavBar } from '../actions/navActions';
-    import { getFooter } from '../actions/footerActions';
-    import { getAllPagesList, getContent, updateOrCreateContent } from "../actions/pagesActions";
+    import { getSeo } from '$actions/seoActions';
+    import { getFonts } from '$actions/fontsActions';
+    import { getNavBar } from '$actions/navActions';
+    import { getFooter } from '$actions/footerActions';
+    import { getAllPagesList, getContent, updateOrCreateContent } from "$actions/pagesActions";
 
     export async function load({url}) {
         const currentPage = '/pages/homeContent'
@@ -31,26 +31,26 @@
 </script>
 
 <script>
-    import DisplayCustomComponent from "../components/DisplayCustomComponent.svelte";
-    import MenuPage from "../components/admin/MenuPage.svelte";
-    import MenuEdit from "../components/admin/MenuEdit.svelte";
+    import DisplayCustomComponent from "$components/DisplayCustomComponent.svelte";
+    import MenuPage from "$components/admin/MenuPage.svelte";
+    import MenuEdit from "$components/admin/MenuEdit.svelte";
     import { userInfo, pageRequest } from "../store";
-    import { logout } from "../actions/userActions";
+    import { logout } from "$actions/userActions";
     import { goto } from "$app/navigation";
     import { browser } from "$app/env";
-    import EditSeoComponent from "../components/admin/EditSeoComponent.svelte";
-    import MenuParamGlobal from "../components/admin/MenuParamGlobal.svelte";
-    import EditNavigationNavBar from "../components/admin/EditNavigationNavBar.svelte";
-    import EditFontsComponent from "../components/admin/EditFontsComponent.svelte";
-    import EditDefaultSeoComponent from "../components/admin/EditDefaultSeoComponent.svelte";
-    import EditFaviconComponent from "../components/admin/EditFaviconComponent.svelte";
-    import EditFooter from "../components/admin/EditFooter.svelte";
-    import config from '../config.json';
-    import SeoComponent from '../components/SeoComponent.svelte';
-    import '../mains.min.css';
-    import LeavingHandler from "../components/admin/LeavingHandler.svelte";
-    import Nav from '../components/nav/Nav.svelte';
-    import Footer from '../components/footer/Footer.svelte';
+    import EditSeoComponent from "$components/admin/EditSeoComponent.svelte";
+    import MenuParamGlobal from "$components/admin/MenuParamGlobal.svelte";
+    import EditNavigationNavBar from "$components/admin/EditNavigationNavBar.svelte";
+    import EditFontsComponent from "$components/admin/EditFontsComponent.svelte";
+    import EditDefaultSeoComponent from "$components/admin/EditDefaultSeoComponent.svelte";
+    import EditFaviconComponent from "$components/admin/EditFaviconComponent.svelte";
+    import EditFooter from "$components/admin/EditFooter.svelte";
+    import config from '$src/config.json';
+    import SeoComponent from '$components/SeoComponent.svelte';
+    import '$src/mains.min.css';
+    import LeavingHandler from "$components/admin/LeavingHandler.svelte";
+    import Nav from '$components/nav/Nav.svelte';
+    import Footer from '$components/footer/Footer.svelte';
     
     export let defaultSeo;
     export let fonts;
