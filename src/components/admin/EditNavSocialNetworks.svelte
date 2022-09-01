@@ -109,14 +109,14 @@
               <div class="bg-light rounded text-center text-dark d-flex align-items-center justify-content-center" style="height: 5vh; width: 5vh;">X</div>
           {/if}
         </div>
-        <!-- <div class="col">
+        <div class="col">
           <label for="iconSN">Icon </label>
           <input type="file" class="form-control" id="iconSN" on:change={(e) => onSelectAnImageSocialNetwork(-1, e)}/>
-        </div> -->
-        <div class="col">
+        </div>
+        <!-- <div class="col">
           <label for="bootstrapClass">Bootstrap-class</label>
           <input type="text" class="form-control" id="bootstrapClass" bind:value={bootstrapClass} placeholder="Ex. bi bi-facebook"/>
-        </div>
+        </div> -->
         <div class="col">
           <label for="nameSN">Name</label>
           <input type="text" class="form-control" id="nameSN" bind:value={snName} placeholder="Ex. Facebook"/>
@@ -145,19 +145,19 @@
     {#each navBar.SOCIAL_NETWORKS as item, ind}
       <div class='row border-top border-light'>
         <div class="col my-2 rounded">
-          <i 
+          <!-- <i 
               class={`${item.bootstrapClass}`}
               style={navBar.STYLE.SOCIAL_NETWORKS.style}
-          ></i>
-          <!-- {#if loadingImage}
+          ></i> -->
+          {#if loadingImage}
             <Loading />
           {:else}
             <img class='img-fluid bg-light rounded' src={config.STATIC_SERVER_URL + item.icon} alt={snAlt} style="width: 5vh;" />
-          {/if} -->
+          {/if}
         </div>
-        <!-- <div class="col my-auto">
+        <div class="col my-auto">
           <input type="file" class="form-control" on:change={(e) => onSelectAnImageSocialNetwork(ind, e)}>
-        </div> -->
+        </div>
         <div class="col my-auto">
           <input type="text" class="form-control" bind:value={item.bootstrapClass}>
         </div>

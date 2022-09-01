@@ -28,7 +28,7 @@
     </a>
     <div class='mx-auto d-none d-lg-flex align-items-center'>
       {#each navBar.SOCIAL_NETWORKS as item}
-        <!-- <div class={`fw-bold ${navBar.STYLE.SOCIAL_NETWORKS.bootstrapClass}`}>
+        <div class={`fw-bold ${navBar.STYLE.SOCIAL_NETWORKS.bootstrapClass}`}>
           <a class="" target={item.target} href={item.redirect}>
             <img 
               style={navBar.STYLE.SOCIAL_NETWORKS.style} 
@@ -36,15 +36,15 @@
               alt={item.alt} 
             />
           </a>
-        </div> -->
-        <div class="mx-3">
+        </div>
+        <!-- <div class="mx-3">
           <a target={item.target} href={item.redirect}>
             <i 
               class={item.bootstrapClass}
               style={navBar.STYLE.SOCIAL_NETWORKS.style}
             ></i>
           </a>
-        </div>
+        </div> -->
       {/each}
     </div>
     <button 
