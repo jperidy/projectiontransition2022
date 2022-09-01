@@ -1,5 +1,5 @@
 <script context='module'>
-    import { getSeo } from "../../actions/seoActions";
+    import { getSeo } from "$actions/seoActions";
     export async function load({ url }) {
         const { seo } = await getSeo();
         return {
@@ -13,18 +13,14 @@
 </script>
 
 <script>
-    import Programmation from "$components/programmation/Programmation.svelte"
     import SeoComponent from "$components/SeoComponent.svelte";
-    import CustomLayout from "$components/CustomLayout.svelte";
+    import Home from "$components/home/Home.svelte";
 
     export let defaultSeo;
     export let url;
 </script>
 
-<CustomLayout>
-    <Programmation />
-</CustomLayout>
-
+<Home />
 
 <SeoComponent
     pageContent={{
