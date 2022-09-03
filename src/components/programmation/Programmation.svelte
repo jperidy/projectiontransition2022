@@ -94,21 +94,29 @@ import SelecteCity from "./SelecteCity.svelte";
     <SelecteCity bind:selectedCity/>
 </div>
 
-{#each Object.values(DAYS) as day }
-    <div class="row mt-3">
-        <div class="col">
-            <h2 class="text-uppercase">{day}</h2>
+<div class="day-container mx-auto">
+    {#each Object.values(DAYS) as day }
+        <div class="row mt-3">
+            <div class="col">
+                <h2 class="text-uppercase">{day}</h2>
+            </div>
         </div>
-    </div>
+    
+        <div class="row gx-3">
+            {#each filmList.filter(
+                (film) => film.cities.find((city) => city.city === selectedCity && city.day === day)
+            ) as film}
+                <Thumbnail film={{ 
+                    ...film, 
+                    ...film.cities.find((city) => city.city === selectedCity && city.day === day)
+                }} />
+            {/each}
+        </div>
+    {/each}
+</div>
 
-    <div class="row">
-        {#each filmList.filter(
-            (film) => film.cities.find((city) => city.city === selectedCity && city.day === day)
-        ) as film}
-            <Thumbnail film={{ 
-                ...film, 
-                ...film.cities.find((city) => city.city === selectedCity && city.day === day)
-            }} />
-        {/each}
-    </div>
-{/each}
+<style>
+    .day-container {
+        max-width: 1200px;
+    }
+</style>

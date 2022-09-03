@@ -4,7 +4,7 @@
     export let film;
 </script>
 
-<div class="wrapper col-12 col-md-6 col-lg-6 p-0 m-0 border border-5 border-outremer">
+<div class="wrapper col-12 col-lg-6 p-2 m-0">
     <button 
         class="button btn rounded-0 border-0 shadow-lg w-100" 
         style="background-image: url({config.STATIC_SERVER_URL}/2022/programmation/{film.image});"

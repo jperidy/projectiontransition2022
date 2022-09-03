@@ -46,10 +46,11 @@
 </script>
 
 <CustomLayout>
-    <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-center align-items-start py-3">
         <SidePanel 
             description="Pouvons-nous faire autre chose qu'utiliser le cinéma, cette arme d'émotion massive, pour réveiller les consciences et bousculer les indifférences ? Je ne l'imagine pas."
-            author="Vincent Lindon, discours d'ouverture du festival de Cannes 2022"
+            author="Vincent Lindon,"
+            authorDescription="discours d'ouverture du festival de Cannes 2022"
         />
         <div class="text-center px-5 content">
             <h1 class="text-pomme">Ouvrir le débat écologique via le cinéma</h1>
@@ -69,13 +70,14 @@
         </div>
         <SidePanel 
             description="Depuis toujours le cinéma s'est emparé de thèmes de société, et, pour une partie c'est une question environnementale qui était au centre de l'intrigue (...) Venez nombreux !"
-            author="Jean-Marc Jancovici, Président du Shift Project"
+            author="Jean-Marc Jancovici,"
+            authorDescription="Président du Shift Project"
         />
     </div>
-    <div class="text-center my-3">
+    <div class="text-center my-3 mx-auto px-5 video-container">
         <iframe 
-            width="424"
-            height="238"
+            width="848"
+            height="476"
             src="https://www.youtube.com/embed/TVfU66jOx9k"
             title="Projection Transition - 2è édition - Bande-annonce officielle (2021)" 
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -112,5 +114,13 @@
     }
     .petale {
         width: 32px;
+    }
+
+    iframe {
+        max-width: 100%;
+    }
+
+    .video-container {
+        max-width: 800px;
     }
 </style>

@@ -149,6 +149,9 @@ $form-file-button-color:                $gray-600;
     padding: 0px;
     margin: 0px;
 }
+.sveltekit-container {
+    overflow: hidden;
+}
 main {
     background-image: url('../static/images/fond-site2022.jpg');
     // background-color: $outremer;
