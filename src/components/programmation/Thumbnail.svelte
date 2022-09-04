@@ -5,18 +5,20 @@
 </script>
 
 <div class="wrapper col-12 col-lg-6 p-2 m-0">
-    <button 
-        class="button btn rounded-0 border-0 shadow-lg w-100" 
-        style="background-image: url({config.STATIC_SERVER_URL}/2022/programmation/{film.image});"
-        on:click={() => goto(`${film.redirect}-${film.city}`)}
-    >
-        <div class={`film-wrapper d-flex flex-column p-3 rounded ${film.styles.color}`}>
-            <h1>{film.title}</h1>
-            <div class="author">de {film.author}</div>
-            <div class="description">{film.description}</div>
-            <div class="moment">{film.moment}</div>
-        </div>
-    </button>
+    <div class="wrapper">
+        <button 
+            class="button btn rounded-0 border-0 shadow-lg w-100" 
+            style="background-image: url({config.STATIC_SERVER_URL}/2022/programmation/{film.image});"
+            on:click={() => goto(`${film.redirect}-${film.city}`)}
+        >
+            <div class={`film-wrapper d-flex flex-column p-3 rounded ${film.styles.color}`}>
+                <h1>{film.title}</h1>
+                <div class="author">de {film.author}</div>
+                <div class="description">{film.description}</div>
+                <div class="moment">{film.moment}</div>
+            </div>
+        </button>
+    </div>
 </div>
 
 <style>

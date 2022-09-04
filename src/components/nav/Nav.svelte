@@ -6,6 +6,13 @@
   let messageUpdateSeo = '';
 
   export let navBar;
+
+  const handleNavBarClick = () => {
+    const collapse = document.getElementsByClassName("navbar-collapse");
+    if (collapse[0]) {
+      collapse[0].classList.remove('show');
+    }
+  }
 </script>
 
 {#if messageUpdateNav}
@@ -67,6 +74,7 @@
             href={item.url}
             style={navBar.STYLE.TITLE.style}
             aria-current="page" 
+            on:click={() => handleNavBarClick()}
           >{item.name.toString()}</a>
         </li>
         {/each}

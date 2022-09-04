@@ -98,11 +98,11 @@ import SelecteCity from "./SelecteCity.svelte";
     {#each Object.values(DAYS) as day }
         <div class="row mt-3">
             <div class="col">
-                <h2 class="text-uppercase">{day}</h2>
+                <h2 class="text-uppercase text-center text-lg-start">{day}</h2>
             </div>
         </div>
     
-        <div class="row gx-3">
+        <div class="row">
             {#each filmList.filter(
                 (film) => film.cities.find((city) => city.city === selectedCity && city.day === day)
             ) as film}
