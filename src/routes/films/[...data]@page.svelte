@@ -3,7 +3,15 @@
     import { films } from "../../components/films/films";
     export async function load({ params, url }) {
         const [name, city] = params.data.split('/');
-        const film = films.find((film) => new RegExp(name).test(film.redirect));
+        const film = films.find((film) => (
+            new RegExp(name).test(film.redirect)
+            && film.cities.find((item) => item.city === city)
+        ));
+        
+        if (!film) {
+            return { status: 404, error: new Error(`Not found: ${url.pathname}`) }
+        }
+
         const { seo } = await getSeo();
 
         return { status: 200, props: { film, city, defaultSeo: seo, url } };

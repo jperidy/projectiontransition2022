@@ -8,7 +8,7 @@
 
     const getCityInformations = () => film.cities.find((item) => item.city === city)
 
-    const { day, moment, animator, participants } = getCityInformations();
+    const { day, moment, animator, participants, cinema } = getCityInformations();
 </script>
 
 <h1 
@@ -19,13 +19,17 @@
 </h1>
 
 <CustomLayout>
-    <div class="d-flex justify-content-center align-items-center py-3">
-        <div>Todo</div>
-        <div class="text-start px-5 content">
+    <div class="row justify-content-center align-items-start py-3 g-4">
+        <div class="col-12 col-lg-2 d-flex flex-column align-items-center align-items-lg-start side-panel">
+            <img src={`${config.STATIC_SERVER_URL}/films/summary/${film.image.summary}`} alt="affiche" class="img-fluid">
+            <p class="text-pomme fw-bold pt-2">Un film de {film.author}</p>
+            <p class="text-white m-0 p-0"><strong>Année de sortie :</strong> {film.releaseDate}</p>
+            <p class="text-white m-0 p-0"><strong>Durée :</strong> {film.duration}</p>
+            <p class="text-white m-0 p-0"><strong>Titre original :</strong> {film.originalTitle}</p>
+        </div>
+        <div class="col-12 col-lg-8 d-flex flex-column align-items-center align-items-lg-start px-5 content">
             <h1 class="text-white">Résumé du film</h1>
-            <p>
-                {film.summary}
-            </p>
+            <p>{film.summary}</p>
             <h1 class="text-white pt-3">Débat. {film.theme}</h1>
             <p class="text-pomme">
                 Début du débat : {moment}. Débat animé par {animator}
@@ -45,21 +49,42 @@
 
             <div class="border-bottom border-3 border-pomme line" />
 
+            <p>{film.debat}</p>
+
             <h1 class="text-white pt-3">Bande annonce</h1>
             <iframe 
                 width="848"
                 height="476"
-                src="https://www.youtube.com/embed/TVfU66jOx9k"
-                title="Projection Transition - 2è édition - Bande-annonce officielle (2021)" 
+                src={`https://www.youtube.com/embed/${film.trailer}`}
+                title={film.title} 
                 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
             </iframe>
+
+            
         </div>
-        <div>Todo</div>
+        <div class="col-12 col-lg-2 d-flex flex-column align-items-start align-items-center align-items-lg-start side-panel">
+            <h2 class="text-pomme">Projection à {cinema.city}</h2>
+            <p class="fw-bold">{cinema.name}</p>
+            <p class="p-0 m-0">{cinema.address}</p>
+            <p class="p-0 m-0">{cinema.zip} {cinema.city}</p>
+            <a class="text-white mt-3" href="/pages/informationsPratiques">Plan d'accés</a>
+            {#if cinema.ticketingOpenDate && new Date() > new Date(cinema.ticketingOpenDate)}
+                <button 
+                    class='btn btn-outline-pomme rounded-0 mt-3'
+                    on:click={() => window.open(cinema.ticketingRedirection, "_blank")}
+                    >
+                    Réserver
+                </button>
+            {:else}
+                <div class="mt-3 fst-italic">Ouverture de la billetterie prochainement</div>
+            {/if}
+
+        </div>
     </div>
 </CustomLayout>
 
-<FilmSummary />
+<FilmSummary city={city} />
 
 <style>
     .banner {
@@ -68,13 +93,20 @@
         background-position: center;
         background-size: cover;
         font-size: 48px;
+        padding: 16px;
     }
-    .content {
+    /* .content {
         max-width: 800px;
-    }
+        min-width: 600px;
+    } */
+    /* .side-panel {
+        min-width: 200px;
+        max-width: 200px;;
+    } */
     .line {
         max-width: 64px;
         margin: 8px 0;
+        width: 64px;
     }
 
     p {
