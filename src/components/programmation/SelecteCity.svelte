@@ -1,6 +1,7 @@
 <script>
-    const citiesList = [ "Bruxelles", "Nantes", "Paris", "Toulouse"];
-    export let selectedCity = citiesList[2];
+    import { CITIES } from "../films/films";
+
+    export let selectedCity = Object.values(CITIES).find(x => x === "Paris");
     
     let showCityMenu = false;
 </script>
@@ -17,7 +18,7 @@
         </button>
         {#if showCityMenu}
             <ul class="list-group position-absolute">
-                {#each citiesList as city }
+                {#each Object.values(CITIES) as city }
                     <button 
                         type="button" 
                         class="list-group-item list-group-item-action"

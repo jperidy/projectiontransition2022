@@ -16,4 +16,6 @@ config-docker.json
 volumes
 
 _backup-mongodb
+_backup-config
+_backup-static-server
 migrations

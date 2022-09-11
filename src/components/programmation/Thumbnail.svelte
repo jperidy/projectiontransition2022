@@ -8,8 +8,8 @@
     <div class="wrapper">
         <button 
             class="button btn rounded-0 border-0 shadow-lg w-100" 
-            style="background-image: url({config.STATIC_SERVER_URL}/2022/programmation/{film.image});"
-            on:click={() => goto(`${film.redirect}-${film.city}`)}
+            style="background-image: url({config.STATIC_SERVER_URL}/films/programmation/{film.image.programmation});"
+            on:click={() => goto(`${film.redirect}/${film.city}`)}
         >
             <div class={`film-wrapper d-flex flex-column p-3 rounded ${film.styles.color}`}>
                 <h1>{film.title}</h1>

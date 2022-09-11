@@ -7,7 +7,7 @@
 </script>
 
 <div class="p-2 film">
-    <img src={`${config.STATIC_SERVER_URL}/home/${image}`} alt={title} class="img-fluid mb-2" />
+    <img src={`${config.STATIC_SERVER_URL}/films/summary/${image}`} alt={title} class="img-fluid mb-2" />
     <h4>{title}</h4>
     <p class="fst-italic mb-1">de {author}</p>
     <div class="border-top border-white w-25 border-2 mb-1"></div>
