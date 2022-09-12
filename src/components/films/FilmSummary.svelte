@@ -31,5 +31,6 @@
 <style>
     .more-details {
         font-family: 'omotenashi_2regular';
+        font-size: 24px;
     }
 </style>
