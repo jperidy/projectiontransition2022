@@ -34,19 +34,23 @@
             <p>{film.summary}</p>
             <h1 class="text-white text-center text-lg-start pt-3">Débat. {film.theme}</h1>
             <p class="text-pomme">
-                Début du débat : {moment}. Débat animé par {animator}
+                Début du débat : {moment}. 
+                {#if animator}
+                    Débat animé par {animator}
+                {/if}
             </p>
 
             <div class="border-bottom border-3 border-pomme line" />
             
             <p class="text-pomme fw-bold">Intervenants :</p>
 
-            {#each participants as participant }
-            <p class="text-white">
-                <span class="fw-bold">{participant.name}</span>
-                <span>{participant.description}</span>
-            </p>
-                
+            {#each participants as participant}
+                {#if participant && participant.name}
+                    <p class="text-white">
+                        <span class="fw-bold">{participant.name}</span>
+                        <span>{participant.description}</span>
+                    </p> 
+                {/if}
             {/each}
 
             <div class="border-bottom border-3 border-pomme line" />
