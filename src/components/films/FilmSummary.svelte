@@ -21,11 +21,13 @@
         </div>
     </CustomLayout>
 
-    <div class="d-flex justify-content-center pb-3">
-        <button class="btn btn-outline-pomme more-details" on:click={() => goto("/programmation")}>
-            En savoir plus
-        </button>
-    </div>
+    {#if !city}
+        <div class="d-flex justify-content-center pb-3">
+            <button class="btn btn-outline-pomme more-details" on:click={() => goto("/programmation")}>
+                En savoir plus
+            </button>
+        </div>
+    {/if}
 </div>
 
 <style>
