@@ -16,7 +16,7 @@
     {#each Object.values(DAYS) as day }
         <div class="row mt-3">
             <div class="col">
-                <h2 class="text-uppercase text-center text-lg-start">{day}</h2>
+                <h2 class="text-uppercase text-center">{day}</h2>
             </div>
         </div>
     

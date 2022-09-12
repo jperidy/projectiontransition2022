@@ -21,16 +21,18 @@
 <CustomLayout>
     <div class="row justify-content-center align-items-start py-3 g-4">
         <div class="col-12 col-lg-2 d-flex flex-column align-items-center align-items-lg-start side-panel">
-            <img src={`${config.STATIC_SERVER_URL}/films/summary/${film.image.summary}`} alt="affiche" class="img-fluid">
+            <img src={`${config.STATIC_SERVER_URL}/films/summary/${film.image.summary}`} alt="affiche" class="img-fluid d-none d-lg-flex">
             <p class="text-pomme fw-bold pt-2">Un film de {film.author}</p>
             <p class="text-white m-0 p-0"><strong>Année de sortie :</strong> {film.releaseDate}</p>
             <p class="text-white m-0 p-0"><strong>Durée :</strong> {film.duration}</p>
-            <p class="text-white m-0 p-0"><strong>Titre original :</strong> {film.originalTitle}</p>
+            {#if film.originalTitle}
+                <p class="text-white m-0 p-0"><strong>Titre original :</strong> {film.originalTitle}</p>
+            {/if}
         </div>
         <div class="col-12 col-lg-8 d-flex flex-column align-items-center align-items-lg-start px-5 content">
-            <h1 class="text-white">Résumé du film</h1>
+            <h1 class="text-white text-center text-lg-start">Résumé du film</h1>
             <p>{film.summary}</p>
-            <h1 class="text-white pt-3">Débat. {film.theme}</h1>
+            <h1 class="text-white text-center text-lg-start pt-3">Débat. {film.theme}</h1>
             <p class="text-pomme">
                 Début du débat : {moment}. Débat animé par {animator}
             </p>
@@ -51,7 +53,7 @@
 
             <p>{film.debat}</p>
 
-            <h1 class="text-white pt-3">Bande annonce</h1>
+            <h1 class="text-white text-center text-lg-start pt-3">Bande annonce</h1>
             <iframe 
                 width="848"
                 height="476"

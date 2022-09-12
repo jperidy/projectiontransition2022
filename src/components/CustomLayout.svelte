@@ -1,5 +1,5 @@
 <script>
-    const size = {
+    export let size = {
         xs: 12,
         sm: 10,
         md: 10,
