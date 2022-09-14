@@ -6,9 +6,9 @@
     export let film;
     export let city;
 
-    const getCityInformations = () => film.cities.find((item) => item.city === city)
+    const getCityInformations = (film, city) => film.cities.find((item) => item.city === city)
 
-    const { day, moment, animator, participants, cinema } = getCityInformations();
+    $: cityInformation = getCityInformations(film, city);
 </script>
 
 <h1 
@@ -31,12 +31,21 @@
         </div>
         <div class="col-12 col-lg-8 d-flex flex-column align-items-center align-items-lg-start px-5 content">
             <h1 class="text-white text-center text-lg-start">Résumé du film</h1>
-            <p>{film.summary}</p>
+            <p class="text-pomme">
+                Début du film : {cityInformation.moment}.
+            </p>
+            <div class="border-bottom border-3 border-pomme line" />
+            <p class="text-center text-lg-start">{film.summary}</p>
             <h1 class="text-white text-center text-lg-start pt-3">Débat. {film.theme}</h1>
             <p class="text-pomme">
-                Début du débat : {moment}. 
-                {#if animator}
-                    Débat animé par {animator}
+                Début du débat : 
+                {#if cityInformation.debatMoment}
+                    {cityInformation.debatMoment}
+                {:else}
+                    à venir
+                {/if}
+                {#if cityInformation.animator}
+                    Débat animé par {cityInformation.animator}
                 {/if}
             </p>
 
@@ -44,7 +53,7 @@
             
             <p class="text-pomme fw-bold">Intervenants :</p>
 
-            {#each participants as participant}
+            {#each cityInformation.participants as participant}
                 {#if participant && participant.name}
                     <p class="text-white">
                         <span class="fw-bold">{participant.name}</span>
@@ -55,9 +64,9 @@
 
             <div class="border-bottom border-3 border-pomme line" />
 
-            <p>{film.debat}</p>
+            <p class="text-center text-lg-start">{film.debat}</p>
 
-            <h1 class="text-white text-center text-lg-start pt-3">Bande annonce</h1>
+            <h1 class="text-white text-center text-lg-start pt-3">Bande-annonce</h1>
             <iframe 
                 width="848"
                 height="476"
@@ -70,15 +79,16 @@
             
         </div>
         <div class="col-12 col-lg-2 d-flex flex-column align-items-start align-items-center align-items-lg-start side-panel">
-            <h2 class="text-pomme">Projection à {cinema.city}</h2>
-            <p class="fw-bold">{cinema.name}</p>
-            <p class="p-0 m-0">{cinema.address}</p>
-            <p class="p-0 m-0">{cinema.zip} {cinema.city}</p>
-            <a class="text-white mt-3" href="/pages/informationsPratiques">Plan d'accés</a>
-            {#if cinema.ticketingOpenDate && new Date() > new Date(cinema.ticketingOpenDate)}
+            <h2 class="text-pomme">Projection à {cityInformation.cinema.city}</h2>
+            <p class="fw-bold">{cityInformation.cinema.name}</p>
+            <p class="p-0 m-0">{cityInformation.cinema.address}</p>
+            <p class="p-0 m-0">{cityInformation.cinema.zip} {cityInformation.cinema.city}</p>
+            <h3 class='text-pomme'>{cityInformation.day} à {cityInformation.moment}</h3>
+            <a class="text-white mt-3" href="/pages/informationsPratiques">Plan d'accès</a>
+            {#if cityInformation.cinema.ticketingOpenDate && new Date() > new Date(cityInformation.cinema.ticketingOpenDate)}
                 <button 
                     class='btn btn-outline-pomme rounded-0 mt-3'
-                    on:click={() => window.open(cinema.ticketingRedirection, "_blank")}
+                    on:click={() => window.open(cityInformation.cinema.ticketingRedirection, "_blank")}
                     >
                     Réserver
                 </button>

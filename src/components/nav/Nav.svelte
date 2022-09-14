@@ -85,8 +85,12 @@
 
 <style>
   .nav-item:last-child {
-    background-color: white;
+    background-color: #3C3F78;
     border-radius: 8px;
-    color: #3C3F78;
+    color: white;
+  }
+  .nav-item:last-child a {
+    color: white!important;
+    padding: 4px 8px!important;
   }
 </style>
