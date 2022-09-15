@@ -85,13 +85,15 @@
             <p class="p-0 m-0">{cityInformation.cinema.zip} {cityInformation.cinema.city}</p>
             <h3 class='text-pomme'>{cityInformation.day} à {cityInformation.moment}</h3>
             <a class="text-white mt-3" href="/pages/informationsPratiques">Plan d'accès</a>
-            {#if cityInformation.cinema.ticketingOpenDate && new Date() > new Date(cityInformation.cinema.ticketingOpenDate)}
+            {#if cityInformation.cinema.ticketingOpenDate && cityInformation.cinema.ticketingRedirection && new Date() > new Date(cityInformation.cinema.ticketingOpenDate)}
                 <button 
                     class='btn btn-outline-pomme rounded-0 mt-3'
                     on:click={() => window.open(cityInformation.cinema.ticketingRedirection, "_blank")}
                     >
                     Réserver
                 </button>
+            {:else if cityInformation.cinema.ticketingMessage}
+                <div class="mt-3 fst-italic">{cityInformation.cinema.ticketingMessage}</div>
             {:else}
                 <div class="mt-3 fst-italic">Ouverture de la billetterie prochainement</div>
             {/if}

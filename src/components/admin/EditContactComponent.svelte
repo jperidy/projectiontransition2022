@@ -9,4 +9,5 @@
     <option value="">--selectionner--</option>
     <option value="contact">Contact</option>
     <option value="dev">Developer</option>
+    <option value="presse">Presse</option>
 </select>

@@ -10,6 +10,9 @@ export async function POST({ request: req }) {
     if (typeContact === 'dev') {
         sendTo = config.DEV_EMAIL;
     }
+    if (typeContact === 'presse') {
+        sendTo = config.PRESSE_EMAIL;
+    }
 
     const mailInfo = {
         to: sendTo,

@@ -27,12 +27,8 @@
     $: textAlign = styles.filter(x => x.name === 'text-align')[0] && styles.filter(x => x.name === 'text-align')[0].value;
 
     const downloadHandler = () => {
-
         const filePath = values[0].url;
-        const link = document.createElement('a');
-        link.href = filePath;
-        link.download = filePath.substr(filePath.lastIndexOf('/') + 1);
-        link.click();
+        window.open(config.STATIC_SERVER_URL + '/' + filePath);
     };
     
 </script>

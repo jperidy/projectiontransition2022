@@ -8,7 +8,7 @@ export const CITIES = {
 export const DAYS = {
     VENDREDI: 'Vendredi 14 octobre',
     SAMEDI: 'Samedi 15 octobre',
-    DIMANCHE: 'Dimanche 15 octobre',
+    DIMANCHE: 'Dimanche 16 octobre',
 };
 
 export const CINEMAS = {
@@ -20,13 +20,22 @@ export const CINEMAS = {
     //     ticketingOpenDate: '',
     //     ticketingRedirection: '',
     // },
-    NANTES: {
+    NANTES_MANUAL: {
         name: 'Cinéma centre commercial Pôle Sud',
         address: 'route de Clisson',
         zip: '44115',
         city: 'Basse Goulaine',
         ticketingOpenDate: '2022-09-15',
         ticketingRedirection: '',
+        ticketingMessage: 'Gratuit - Réservation sur place dans la limite des places disponibles'
+    },
+    NANTES: {
+        name: 'Cinéma centre commercial Pôle Sud',
+        address: 'route de Clisson',
+        zip: '44115',
+        city: 'Basse Goulaine',
+        ticketingOpenDate: '2022-09-15',
+        ticketingRedirection: 'https://www.cinepolesud.fr/evenement/2029044-projection-transition',
     },
     PARIS_MANUAL: {
         name: 'Cinéma les 7 Parnassiens',
@@ -42,7 +51,7 @@ export const CINEMAS = {
         zip: '75014',
         city: 'Paris',
         ticketingOpenDate: '2022-09-15',
-        ticketingRedirection: '/',
+        ticketingRedirection: 'https://www.parnassiens.com/evenement/2029152-projection-transition',
     },
     TOULOUSE_BORDEROUGE: {
         name: 'Utopia Borderouge',
@@ -74,7 +83,7 @@ export const films = [
         image: { summary: "en-guerre.jpg", programmation: "en-guerre.jpeg"},
         summary: "Malgré de lourds sacrifices financiers de la part des salariés et un bénéfice record de leur entreprise, la direction de l’usine Perrin Industrie décide néanmoins la fermeture totale du site. Accord bafoué, promesses non respectées, les 1100 salariés, emmenés par leur porte‑parole Laurent Amédéo, refusent cette décision brutale et vont tout tenter pour sauver leur emploi.",
         trailer: 'qOB9mroJ1zU',
-        debat: "La lutte des travailleurs ordinaires contraints de se lever contre les puissants pour améliorer leurs conditions ou préserver leur emploi est vieille comme le monde. En Guerre met en abîme ces deux mondes sur fonds de mondialisation et de laisser-faire politique. S’il ne traite pas directement des enjeux écologiques, ce film apporte une réflexion intéressante sur l'utilité du travail et la défense des emplois au regard deschangements à venir. Aujourd’hui, quelques actionnaires peuvent décider de supprimer des milliers d'emplois à un endroit pour satisfaire une meilleure rentabilité des capitaux dans d’autres secteurs ou d’autres pays, moins-disant sur le plan environnemental. Dans un monde en transition, certains secteurs économiques sont amenés à fortement se réduire voire à disparaitre. Cela provoquera des pertes massives d'emplois et un chaos social si rien n'est planifié. La justice climatique ne pourra se faire sans justice sociale. Doit-on collectivement décider quelles industries il faut préserver au regard de leur impacts environnementaux et jusqu’où devons-nous aider à la reconversion ? S’agissant du caractère utile de certains métiers, quels sont ceux dont on a réellement besoin et qui nous aideront à affronter les bouleversements à venir ?",
+        debat: "La lutte des travailleurs ordinaires contraints de se lever contre les puissants pour améliorer leurs conditions ou préserver leur emploi est vieille comme le monde. En Guerre met en abîme ces deux mondes sur fonds de mondialisation et de laisser-faire politique. S’il ne traite pas directement des enjeux écologiques, ce film apporte une réflexion intéressante sur l'utilité du travail et la défense des emplois au regard des changements à venir. Aujourd’hui, quelques actionnaires peuvent décider de supprimer des milliers d'emplois à un endroit pour satisfaire une meilleure rentabilité des capitaux dans d’autres secteurs ou d’autres pays, moins-disant sur le plan environnemental. Dans un monde en transition, certains secteurs économiques sont amenés à fortement se réduire voire à disparaitre. Cela provoquera des pertes massives d'emplois et un chaos social si rien n'est planifié. La justice climatique ne pourra se faire sans justice sociale. Doit-on collectivement décider quelles industries il faut préserver au regard de leur impacts environnementaux et jusqu’où devons-nous aider à la reconversion ? S’agissant du caractère utile de certains métiers, quels sont ceux dont on a réellement besoin et qui nous aideront à affronter les bouleversements à venir ?",
         redirect: '/films/en-guerre',
         styles: { color: "text-dark"},
         cities: [
@@ -110,7 +119,7 @@ export const films = [
                     { name: null, description: "description 1"},
                     { name: null, description: "description 2"},
                 ],
-                cinema: CINEMAS.TOULOUSE_BORDEROUGE,
+                cinema: CINEMAS.TOULOUSE_TOURNEFEUILLE,
             }, 
         ]
     },
@@ -125,7 +134,7 @@ export const films = [
         image: { summary: "goliath.jpg", programmation: "goliath.jpg"},
         summary: "France, professeure de sport le jour, ouvrière la nuit, milite activement contre l’usage des pesticides. Patrick, obscur et solitaire avocat parisien, est spécialiste en droit environnemental. Mathias, lobbyiste brillant et homme pressé, défend les intérêts d’un géant de l’agrochimie. Suite à l’acte radical d’une anonyme, ces trois destins, qui n’auraient jamais dû se croiser, vont se bousculer, s’entrechoquer et s’embraser.", 
         trailer: "I3gZ6Iz6yQI",
-        debat: "A travers l’histoire d’un avocat déterminé à obtenir réparation pour ses clients victimes de produits phytosanitaires toxiques, Goliathpointe la puissance des lobbys de l’industrie agrochimique où pouvoir et argent peuvent prendre le pas sur la santé des populations et la préservation de la biodiversité.Ce film met en exerguele mensonge institutionnalisé qui consiste à ne pas interdire certains produits nocifs pour les consommateurs mais aussi les agriculteurs, au nom de la rentabilité et de l’autonomie alimentaire.Lutte contre le dérèglement climatique et justice sociale ne peuvent s’opposer, et cela s’applique aussi à ces producteurs singuliers que sont les agriculteurs, en première ligne face aux changements climatiques et à la créativité de l’ingénierie agrochimique.Dans un contexte géopolitique qui a mis en lumière notre vulnérabilité, nous avons plus que jamais besoin de repenser nos modèles agricoles. S’il existe des systèmes de production alternatifs, sont-ils crédibles pour répondre aux besoins vitaux de la population ? Peut-on nourrir l’ensemble de la population tout en préservant la santé de chacun et dans le respect de l’environnement ?",
+        debat: "A travers l’histoire d’un avocat déterminé à obtenir réparation pour ses clients victimes de produits phytosanitaires toxiques, Goliath pointe la puissance des lobbys de l’industrie agrochimique où pouvoir et argent peuvent prendre le pas sur la santé des populations et la préservation de la biodiversité. Ce film met en exergue le mensonge institutionnalisé qui consiste à ne pas interdire certains produits nocifs pour les consommateurs mais aussi les agriculteurs, au nom de la rentabilité et de l’autonomie alimentaire. Lutte contre le dérèglement climatique et justice sociale ne peuvent s’opposer, et cela s’applique aussi à ces producteurs singuliers que sont les agriculteurs, en première ligne face aux changements climatiques et à la créativité de l’ingénierie agrochimique. Dans un contexte géopolitique qui a mis en lumière notre vulnérabilité, nous avons plus que jamais besoin de repenser nos modèles agricoles. S’il existe des systèmes de production alternatifs, sont-ils crédibles pour répondre aux besoins vitaux de la population ? Peut-on nourrir l’ensemble de la population tout en préservant la santé de chacun et dans le respect de l’environnement ?",
         redirect: '/films/goliath',
         styles: { color: "text-dark"},
         cities: [
@@ -133,7 +142,7 @@ export const films = [
                 city: CITIES.PARIS, 
                 day: DAYS.DIMANCHE, 
                 moment: "11h",
-                debatMoment: "13h10h",
+                debatMoment: "13h10",
                 animator: null,
                 participants: [
                     { name: null, description: "description 1"},
@@ -155,7 +164,7 @@ export const films = [
             { 
                 city: CITIES.TOULOUSE, 
                 day: DAYS.DIMANCHE, 
-                moment: "11h00",
+                moment: "11h",
                 animator: null,
                 participants: [
                     { name: null, description: "description 1"},
@@ -169,14 +178,14 @@ export const films = [
         edition: 2022,
         title: "Le Garçon qui dompta le vent",
         author: "Chiwetel Ejiofor",
-        releaseDate: 2021,
+        releaseDate: 2019,
         duration: "1h53",
         originalTitle: 'The Boy Who Harnessed the Wind',
         theme : "Inégalités climatiques : quelles solutions pour les pays les plus vulnérables ?",
         image: { summary: "le-garcon-qui-dompta-le-vent.jpg", programmation: "garcon-qui-dompta-le-vent.jpg" },
         summary: "Contre toute attente, un jeune Malawite de 13 ans invente un système ingénieux pour sauver sa famille et son village de la famine. Inspiré de l'histoire vraie de William Kamkwamba et adapté de son roman best-seller.", 
         trailer: "nPkr9HmglG0",
-        debat: "Tiré d’une histoire vraie, Le Garçon qui dompta le vent présente le destin exceptionnel du jeune William Kamkwamba, quiinvente un systèmeingénieuxd'extractionde l’eau du solpourirriguer les plantations etsauverson village menacédefamine suite à unegrande sécheresse et àl’envolée du prix des céréales.Avec l’amplification du dérèglement climatique, les catastrophes “naturelles”augmenteront en intensité et en fréquence. Les pays les plus touchés serontceux qui ont le moins contribué à la catastrophe écologique. Les pays occidentaux historiquement les plus grands émetteurs de gaz à effet de serreont une grande responsabilité dans cette injustice climatique vis-à-vis des pays les plus vulnérables. Peut-on imaginer qu’ils prennent leur légitime part au développement de solutions adaptées à ces territoires et ces populations, qu’ils s’agissent d’échanges de technologies ou de capacité financement ? Qu’a-t-on à apprendre de ces pays qui ont encore l’habitude de faire avec la nature ? Il ne fait aucun doute que les liens entre États/Pays doivent être revisités à l’aune de l’adaptation climatique.Ce débat fera aussi l’objet d’un projet pédagogique avec plusieurs classes de lycée. L’objectif étant de sensibiliser les élèves aux inégalités géographiques, à l’importance de la transmission des connaissances, et montrer que malgré la complexité des problématiques, de nombreux acteurs peuvent participer à la mise en œuvre de solutions.",
+        debat: "Tiré d’une histoire vraie, Le Garçon qui dompta le vent présente le destin exceptionnel du jeune William Kamkwamba, qui invente un système ingénieux d'extractionde l’eau du sol pour irriguer les plantations et sauver son village menacé de famine suite à une grande sécheresse et à l’envolée du prix des céréales. Avec l’amplification du dérèglement climatique, les catastrophes “naturelles” augmenteront en intensité et en fréquence. Les pays les plus touchés seront ceux qui ont le moins contribué à la catastrophe écologique. Les pays occidentaux historiquement les plus grands émetteurs de gaz à effet de serreont une grande responsabilité dans cette injustice climatique vis-à-vis des pays les plus vulnérables. Peut-on imaginer qu’ils prennent leur légitime part au développement de solutions adaptées à ces territoires et ces populations, qu’ils s’agissent d’échanges de technologies ou de capacité financement ? Qu’a-t-on à apprendre de ces pays qui ont encore l’habitude de faire avec la nature ? Il ne fait aucun doute que les liens entre États/Pays doivent être revisités à l’aune de l’adaptation climatique. Ce débat fera aussi l’objet d’un projet pédagogique avec plusieurs classes de lycée. L’objectif étant de sensibiliser les élèves aux inégalités géographiques, à l’importance de la transmission des connaissances, et montrer que malgré la complexité des problématiques, de nombreux acteurs peuvent participer à la mise en œuvre de solutions.",
         redirect: '/films/garcon-qui-dompta-le-vent',
         styles: { color: "text-dark"},
         cities: [
@@ -196,23 +205,25 @@ export const films = [
                 city: CITIES.NANTES, 
                 day: DAYS.VENDREDI, 
                 moment: "14h",
+                debatMoment: "16h00",
                 animator: null,
                 participants: [
                     { name: null, description: "description 1"},
                     { name: null, description: "description 2"},
                 ],
-                cinema: CINEMAS.NANTES,
+                cinema: CINEMAS.NANTES_MANUAL,
             }, 
             { 
                 city: CITIES.TOULOUSE, 
                 day: DAYS.VENDREDI, 
                 moment: "14h",
+                debatMoment: "16h00",
                 animator: null,
                 participants: [
                     { name: null, description: "description 1"},
                     { name: null, description: "description 2"},
                 ],
-                cinema: CINEMAS.TOULOUSE_BORDEROUGE,
+                cinema: CINEMAS.TOULOUSE_TOURNEFEUILLE,
             }, 
         ]
     },
@@ -227,7 +238,7 @@ export const films = [
         image: { summary: "les-fils-de-l-homme.jpg", programmation: "les-fils-de-lhomme.png"},
         summary: "Dans une société futuriste où les êtres humains ne parviennent plus à se reproduire, l'annonce de la mort de la plus jeune personne, âgée de 18 ans, met la population en émoi. Au même moment, une femme tombe enceinte - un fait qui ne s'est pas produit depuis une vingtaine d'années - et devient par la même occasion la personne la plus enviée et la plus recherchée de la Terre. Un homme est chargé de sa protection... Film interdit aux moins de 12 ans.", 
         trailer: "2VT2apoX90o",
-        debat: "Dans une Angleterre agonisante en 2027, Les Fils de l’homme dresse le portrait d’une société totalitaire  et  violente  où  le  gouvernement  parque certainesminorités  dans  des  camps insalubres.Par sa mise en scène réaliste et sobre, cefilm rend ce futur proche de nous, un futur  déjà  porté  en  germe  par  nos  sociétés  actuelles,  notamment  en  ce  qui  concerne  les problématiques migratoires. On serait presque habitué aux images de bateaux de migrants franchissant la Méditerranée, à ceux qui meurent lors de la traversée ou encore à l’accueil parfois déshumanisé des survivantssur nos côtes. Les prévisions actuelles sur le changement climatique montrent que les pays qui seront le plus durement touchés sont ceux qui sont les plus fragiles aujourd’hui. Si la marche du monde ne change pas, des centaines de millions de personnes n’auront d’autre choix que de fuir des conditions de vie extrêmes. Comment nos sociétés  réagiront  face  à  cet  afflux  massif  de  population  alors  qu’elles  seront  très probablement   elles   aussi   confrontées   à   des  situations   climatiques   et   écosystémiques dégradées ?  Peut-on éviter que la fiction ne rejoigne la réalité et si oui comment ?",
+        debat: "Dans une Angleterre agonisante en 2027, Les Fils de l’homme dresse le portrait d’une société totalitaire  et  violente  où  le  gouvernement  parque certaines minorités  dans  des  camps insalubres. Par sa mise en scène réaliste et sobre, ce film rend ce futur proche de nous, un futur  déjà  porté  en  germe  par  nos  sociétés  actuelles,  notamment  en  ce  qui  concerne  les problématiques migratoires. On serait presque habitué aux images de bateaux de migrants franchissant la Méditerranée, à ceux qui meurent lors de la traversée ou encore à l’accueil parfois déshumanisé des survivants sur nos côtes. Les prévisions actuelles sur le changement climatique montrent que les pays qui seront le plus durement touchés sont ceux qui sont les plus fragiles aujourd’hui. Si la marche du monde ne change pas, des centaines de millions de personnes n’auront d’autre choix que de fuir des conditions de vie extrêmes. Comment nos sociétés  réagiront  face  à  cet  afflux  massif  de  population  alors  qu’elles  seront  très probablement   elles   aussi   confrontées   à   des  situations   climatiques   et   écosystémiques dégradées ?  Peut-on éviter que la fiction ne rejoigne la réalité et si oui comment ?",
         redirect: '/films/les-fils-de-l-homme',
         styles: { color: "text-dark"},
         cities: [
@@ -257,7 +268,7 @@ export const films = [
             { 
                 city: CITIES.TOULOUSE, 
                 day: DAYS.DIMANCHE, 
-                moment: "20h00",
+                moment: "20h",
                 animator: null,
                 participants: [
                     { name: null, description: "description 1"},
@@ -278,7 +289,7 @@ export const films = [
         image: { summary: "sans-filtre.jpg", programmation: "sans-filtre.jpg"},
         summary: "Après la Fashion Week, Carl et Yaya, couple de mannequins et influenceurs, sont invités sur un yacht pour une croisière de luxe. Tandis que l’équipage est aux petits soins avec les vacanciers, le capitaine refuse de sortir de sa cabine alors que le fameux dîner de gala approche. Les événements prennent une tournure inattendue et les rapports de force s'inversent lorsqu'une tempête se lève et met en danger le confort des passagers. Palme d'Or au Festival de Cannes 2022.", 
         trailer: "gaOdbOdWCVA",
-        debat: "L’économie numérique a fait émerger de nouveaux acteurs : les influenceuses et influenceurs qui pour la plupart promeuvent un mode de vie consumériste et des représentations de la réussitedélétères pour l’environnement.Palme d’Or à Cannes, Sans filtrenous plonge dans les coulisses de ces nouveaux agents économiques dont l’influence grandissante sur leurs fans représentent un péril pour l’habitabilité de la planète. Devant l’urgence absolue de la transition énergétique et écologique, ces influenceurs tout autant que les personnalités les plus fortunées ont une grande responsabilité dans la fuite en avant de nos sociétés. Parce qu’ils maitrisent les outils de communication et de représentation, on pourrait imaginer en faire des alliés de la transition. Ils pourraient devenirdes ambassadeurs de modèles respectueux des limites planétaires et non plus des vitrines de la croissance effrénée. Mais peut-on être influent ou le rester en faisant la promotion de modes de vie plus sobres alors que justement la (sur)consommation est leur gagne-pain ? Quels types de rétribution alternative peut-on imaginer ?Après un été 2022 révélateur des dérèglements climatiques en cours, les polémiques enflent sur le rôle des influenceuses et influenceurs et les réponses à ces questions n’ont jamais été autant d’actualité.",
+        debat: "L’économie numérique a fait émerger de nouveaux acteurs : les influenceuses et influenceurs qui pour la plupart promeuvent un mode de vie consumériste et des représentations de la réussite délétères pour l’environnement. Palme d’Or à Cannes, Sans filtre nous plonge dans les coulisses de ces nouveaux agents économiques dont l’influence grandissante sur leurs fans représentent un péril pour l’habitabilité de la planète. Devant l’urgence absolue de la transition énergétique et écologique, ces influenceurs tout autant que les personnalités les plus fortunées ont une grande responsabilité dans la fuite en avant de nos sociétés. Parce qu’ils maitrisent les outils de communication et de représentation, on pourrait imaginer en faire des alliés de la transition. Ils pourraient devenir des ambassadeurs de modèles respectueux des limites planétaires et non plus des vitrines de la croissance effrénée. Mais peut-on être influent ou le rester en faisant la promotion de modes de vie plus sobres alors que justement la (sur)consommation est leur gagne-pain ? Quels types de rétribution alternative peut-on imaginer ? Après un été 2022 révélateur des dérèglements climatiques en cours, les polémiques enflent sur le rôle des influenceuses et influenceurs et les réponses à ces questions n’ont jamais été autant d’actualité.",
         redirect: '/films/sans-filtre',
         styles: { color: "text-dark"},
         cities: [
@@ -318,7 +329,7 @@ export const films = [
         image: { summary: 'soleil-vert.jpg', programmation: "soleil-vert.jpeg"}, 
         summary: "New York en 2022. Un brouillard a envahi la surface du globe, tuant la végétation et la plupart des espèces animales. D'un côté, les nantis qui peuvent avoir accès à la nourriture rare et très chère. De l'autre, les affamés nourris d'un produit synthétique, le soylent, rationné par le gouvernement... Lors d'une émeute, le président de soylent trouve la mort et Thorn , un flic opiniâtre, est chargé de l'enquête...", 
         trailer: "N_jGOKYHxaQ",
-        debat: "Réalisé en 1973 par Richard Fleischer et adapté du roman Make room! Make Room!d’Harry Harrison, Soleil  verttémoigne  de  la  prise  de  conscience  du  rôle  des  activités  humaines  sur l’environnement. L’action de cette dystopie se déroule en2022 et montre les conséquences désastreuses d’un  développement  industriel à  marche  forcée. La  surconsommation  et l'épuisement des ressources naturelles ont ruiné l'avenir de l'Homme en quelques décennies. Le paroxysme de l’agonie de l'espèce humaine étant atteint avec la disparition d'un élément essentiel à son existence: la nourriture. A la fois besoin vital, source de plaisiret élément de partage social, l’alimentation est centrale dans les sociétés. Nous nous rapprochons toujours plus des limites planétaires quand nous ne les avons pas franchies et Soleil vertressemble chaque jour un peu plus à un cauchemarprémonitoire. Le suicide collectif en cours peut-il encore être évité par l’action collective? Si oui,  quelle  organisation  sociétale,  quels  modes  de  production  agricoles  et  quel  régime alimentaire  doit-on  adopter  pour  que  nous  puissions  encore  apprécier notre  nourriture  et notre existencedans le futur ?",
+        debat: "Réalisé en 1973 par Richard Fleischer et adapté du roman Make room ! Make Room ! d’Harry Harrison, Soleil vert témoigne de la prise de conscience du rôle des activités humaines sur l’environnement. L’action de cette dystopie se déroule en 2022 et montre les conséquences désastreuses d’un développement industriel à marche forcée. La surconsommation  et l'épuisement des ressources naturelles ont ruiné l'avenir de l'Homme en quelques décennies. Le paroxysme de l’agonie de l'espèce humaine étant atteint avec la disparition d'un élément essentiel à son existence : la nourriture. A la fois besoin vital, source de plaisir et élément de partage social, l’alimentation est centrale dans les sociétés. Nous nous rapprochons toujours plus des limites planétaires quand nous ne les avons pas franchies et Soleil vert ressemble chaque jour un peu plus à un cauchemar prémonitoire. Le suicide collectif en cours peut-il encore être évité par l’action collective ? Si oui,  quelle  organisation  sociétale,  quels  modes  de  production  agricoles  et  quel  régime alimentaire  doit-on  adopter  pour  que  nous  puissions  encore  apprécier notre  nourriture  et notre existence dans le futur ?",
         redirect: '/films/soleil-vert',
         styles: { color: "text-dark"},
         cities: [
@@ -354,7 +365,7 @@ export const films = [
                     { name: null, description: "description 1"},
                     { name: null, description: "description 2"},
                 ],
-                cinema: CINEMAS.TOULOUSE_BORDEROUGE,
+                cinema: CINEMAS.TOULOUSE_TOURNEFEUILLE,
             }, 
         ]
     },
