@@ -2,10 +2,10 @@
 	"name": "projectiontransition2022",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "concurrently \"vite dev --port 3001\" \"npm run start --prefix static_server\"",
+		"dev": "concurrently \"vite dev --port 3000\" \"npm run start --prefix static_server\"",
 		"build": "vite build",
-		"start": "concurrently \"PORT=3001 node build\" \"npm run start --prefix static_server\"",
-		"deploy:web": "PORT=3001 pm2 start build/index.js --name projectionTransition2022-web",
+		"start": "concurrently \"PORT=3000 node build\" \"npm run start --prefix static_server\"",
+		"deploy:web": "PORT=3000 pm2 start build/index.js --name projectionTransition2022-web",
 		"deploy": "npm run deploy:web && npm run deploy:static --prefix static_server",
 		"undeploy:web": "pm2 stop projectionTransition2022-web",
 		"undeploy": "npm run undeploy:web && npm run undeploy:static --prefix static_server",
