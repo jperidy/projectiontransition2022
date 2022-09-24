@@ -1,15 +1,13 @@
 <script>
-    import { DAYS, films } from "../films/films";
+	import { city } from './../../store.js';
+    import { DAYS, films } from "../../data-local/2022/films";
     import SelecteCity from "./SelecteCity.svelte";
     import Thumbnail from "./Thumbnail.svelte";
-
-    let selectedCity;
-
 </script>
 
 <div class="d-flex flex-column my-5 text-center align-items-center">
     <h1 class="text-pomme">La programmation 2022</h1>
-    <SelecteCity bind:selectedCity/>
+    <SelecteCity />
 </div>
 
 <div class="day-container mx-auto">
@@ -22,11 +20,11 @@
     
         <div class="row mt-1">
             {#each films.filter(
-                (film) => film.cities.find((city) => city.city === selectedCity && city.day === day)
+                (film) => film.cities.find((item) => item.city === $city && item.day === day)
             ) as film}
                 <Thumbnail film={{ 
                     ...film, 
-                    ...film.cities.find((city) => city.city === selectedCity && city.day === day)
+                    ...film.cities.find((item) => item.city === $city && item.day === day)
                 }} />
             {/each}
         </div>

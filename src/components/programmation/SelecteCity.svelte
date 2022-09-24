@@ -1,7 +1,8 @@
 <script>
-    import { CITIES } from "../films/films";
+	import { city } from './../../store.js';
+    import { CITIES } from "../../data-local/2022/films";
 
-    export let selectedCity = Object.values(CITIES).find(x => x === "Paris");
+    $: selectedCity = Object.values(CITIES).find(x => x === $city);
     
     let showCityMenu = false;
 </script>
@@ -18,16 +19,17 @@
         </button>
         {#if showCityMenu}
             <ul class="list-group position-absolute city-list">
-                {#each Object.values(CITIES) as city }
+                {#each Object.values(CITIES) as item }
                     <button 
                         type="button" 
                         class="list-group-item list-group-item-action"
                         on:click={() => {
-                            selectedCity = city;
+                            selectedCity = item;
+                            city.set(item);
                             showCityMenu = false;
                         }}
                     >
-                        {city}
+                        {item}
                     </button>
                 {/each}
             </ul>
@@ -41,5 +43,6 @@
     }
     .city-list {
         width: 200px;
+        z-index: 10;
     }
 </style>

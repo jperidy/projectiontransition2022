@@ -4,7 +4,7 @@ import { browser } from "$app/env";
 const getInitialUserInfo = () => {
     const userInfo = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null;
     // ADD method to verify validity of token !
-    // Complicated because async function > no risk because no modification possible if token corupted
+    // Complicated because async function > no risk because no modification possible if token corrupted
     return userInfo;
 };
 
@@ -12,6 +12,8 @@ const getInitialCopyComponent = () => {
     const copyComponent = localStorage.getItem('copyComponent') ? JSON.parse(localStorage.getItem('copyComponent')) : null;
     return copyComponent;
 };
+
+export const city = writable('Paris');
 
 export const userInfo = writable(browser ? getInitialUserInfo() : '');
 

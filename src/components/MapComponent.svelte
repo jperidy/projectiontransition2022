@@ -1,57 +1,64 @@
 <script>
+	import Loading from './Loading.svelte';
     export let adresse = '';
     export let latitude = 0;
     export let longitude = 0;
     export let mapid = 'id';
     import { browser } from '$app/env'; 
-    import { onMount } from 'svelte';
+	import { onMount } from 'svelte';
     
     const tileLayerUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-    const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';    
+    const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'; 
     
-    onMount(async() => {
+    const loadMap = (adresse, latitude, longitude) => {
         if (browser) {
-            const L = await import('leaflet');
-
             const container = L.DomUtil.get(mapid.toString());
             if(container != null){
-              container._leaflet_id = null;
+                container._leaflet_id = null;
             }
-
-            const myMap = L.map(mapid.toString()).setView([latitude, longitude], 13);
-
-            L.tileLayer(tileLayerUrl, {
-                attribution: attribution
-            }).addTo(myMap);
-            // Add a marker
-            L.marker([latitude, longitude]).addTo(myMap)
-                .bindPopup(`<b>${adresse.replaceAll(/[#|*|_]/g,'')}</b>`)
-                .openPopup();
+            if (container) {
+                const myMap = L.map(mapid.toString()).setView([latitude, longitude], 13);
+    
+                L.tileLayer(tileLayerUrl, {
+                    attribution: attribution
+                }).addTo(myMap);
+    
+                L.marker([latitude, longitude]).addTo(myMap)
+                    .bindPopup(`<b>${adresse.replaceAll(/[#|*|_]/g,'')}</b>`)
+                    .openPopup();
+            }
         }
+    }
 
-    });
+    onMount(() => loadMap(adresse, latitude, longitude))
 
-
-    // https://leafletjs.com/examples/quick-start/
+    $: loadMap(adresse, latitude, longitude);
 
 </script>
 
-<!-- Integrate map from openstreetmap -->
-<link 
-    rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""
-/>
+<svelte:head>
+    <link 
+        rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""
+    />
+    <script 
+        src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
+        integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s="
+        crossorigin=""
+    ></script>
+</svelte:head>
+
 
 {#if browser}
     <div id={mapid.toString()} class='mapid'></div>
+{:else}
+    <Loading number={3} color="dark" />
 {/if}
-<!-- <div class='mapid m-0 p-0 rounded-3' use:mapAction></div> -->
-<!-- <div class='mapid m-0 p-0 rounded-3'></div> -->
-
 
 <style>
     .mapid { 
-        height: 230px; 
+        height: 300px;
+        z-index: 0;
     }
 </style>
