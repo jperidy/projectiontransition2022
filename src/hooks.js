@@ -9,7 +9,6 @@ const admins = [
     { methods: ['POST'], uri: /^\/api\/pages$/ },
     { methods: ['PUT', 'DELETE'], uri: /^\/api\/pages\/[a-zA-Z-_]*$/},
     { methods: ['POST'], uri: /^\/api\/pages\/duplicate$/ },
-    { methods: ['POST'], uri: /^\/api\/emails$/ },
     { methods: ['PUT'], uri: /^\/api\/fonts$/ },
     { methods: ['DELETE'], uri: /^\/api\/fonts\/[a-zA-Z-_]*$/ },
     { methods: ['PUT'], uri: /^\/api\/footers$/ },
