@@ -8,12 +8,12 @@ class MailService {
     constructor(host, port, user, pass) {
         const options = {
             viewEngine: {
-                partialsDir: __dir + "/backend/views/partials",
-                layoutsDir: __dir + "/backend/views/layouts",
+                partialsDir: __dir + "/src/services/emails/views/partials",
+                layoutsDir: __dir + "/src/services/emails/views/layouts",
                 extname: ".hbs",
             },
             extName: ".hbs",
-            viewPath: "backend/views"
+            viewPath: "src/services/emails/views"
         };
 
         this._transporter = nodemailer.createTransport({

@@ -24,10 +24,10 @@
 
 <SeoComponent
     pageContent={{
-        titleSeo: "Projection Transition - Programmation 2022",
-        descriptionSeo: "Projection Transition - Le festival ciné-débat pour la transition écologique",
-        titleOG: "Projection Transition - Programmation 2022",
-        descriptionOG: "Retrouvez la programmation de l'édition 2022 !"
+        titleSeo: "Projection Transition | 14 > 16 octobre 2022",
+        descriptionSeo: "Festival de ciné-débat pour la transition écologique",
+        titleOG: "Projection Transition | 14 > 16 octobre 2022",
+        descriptionOG: "Festival de ciné-débat pour la transition écologique !"
     }}
     url={url}
     defaultSeo={defaultSeo}
