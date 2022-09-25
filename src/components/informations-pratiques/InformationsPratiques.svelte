@@ -3,6 +3,7 @@
 	import SelecteCity from "../programmation/SelecteCity.svelte";
     import { CINEMAS } from "../../data-local/2022/films"
 	import MapComponent from "../MapComponent.svelte";
+	import ContactForm from '../ContactForm.svelte';
 
     const onlyUnique = (value, index, self) => {
         return self.findIndex((selfValue) => selfValue.name === value.name) === index;
@@ -11,6 +12,11 @@
         .map((key) => CINEMAS[key])
         .filter((cinema) => cinema.organization === $city)
         .filter(onlyUnique);
+    
+    let contactType = ""
+    const selectContactHandler = (e) => {
+        contactType = e.target.value;
+    }
 </script>
 
 <div class="d-flex flex-column my-5 text-center align-items-center">
@@ -45,6 +51,19 @@
         </div>
     </div>
 {/each}
+
+<div class="mt-5">
+    <h2 id="contact">Contactez-nous</h2>
+    <div class="col-12 col-md-6 mb-3 pe-4">
+        <select class="form-select" on:change={selectContactHandler}>
+            <option selected>Qui souhaitez-vous contacter ?</option>
+            <option value="contact">Contact grand public</option>
+            <option value="presse">Contact presse</option>
+            <option value="dev">Développeur web</option>
+        </select>
+    </div>
+    <ContactForm values={[{type: contactType}]}/>
+</div>
 
 <style>
     button {

@@ -33,8 +33,6 @@ export const filmAllRequest = writable({films:null, loading:false, message:''});
 export const filmCreateRequest = writable({success:false, loading:false, message:''});
 export const filmDeleteRequest = writable({success:false, loading:false, message:''});
 
-export const emailSendRequest = writable({success:false, loading:false, message:''});
-
 export const statisticsSendRequest = writable({success:false, loading:false, message:'', data:{}});
 export const statisticsAllPages = writable({success:false, loading:false, message:'', pages:[], application: {}});
 
