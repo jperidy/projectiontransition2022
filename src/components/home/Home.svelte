@@ -25,12 +25,12 @@
                 du dérèglement climatique et soulignant les inégalités face à ceux-ci, 
                 Projection Transition portera haut et fort la thématique de la justice climatique 
                 et sociale. Six films, chacun suivi d'un débat, permettront de mettre l'accent sur les 
-                enjeux de justice à différentes échelles à travers une programmation engagée. Découvrez la bande annonce.
+                enjeux de justice à différentes échelles à travers une programmation engagée. Découvrez la bande-annonce.
             </p>
             <iframe 
                 width="848"
                 height="476"
-                src="https://www.youtube.com/embed/TVfU66jOx9k"
+                src="https://www.youtube.com/embed/8jyFzkIz86g"
                 title="Projection Transition - 2è édition - Bande-annonce officielle (2021)" 
                 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>

@@ -1,5 +1,4 @@
 import MailService from '../../../services/emails/MailService';
-
 import config from '../../../config.json';
 
 export async function POST({ request: req }) {
