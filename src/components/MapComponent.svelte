@@ -1,11 +1,13 @@
 <script>
 	import Loading from './Loading.svelte';
+    import L from 'leaflet';
+
     export let adresse = '';
     export let latitude = 0;
     export let longitude = 0;
     export let mapid = 'id';
     import { browser } from '$app/env'; 
-	import { onMount } from 'svelte';
+	import { afterUpdate, onMount } from 'svelte';
     
     const tileLayerUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'; 
@@ -30,7 +32,7 @@
         }
     }
 
-    onMount(() => loadMap(adresse, latitude, longitude))
+    afterUpdate(() => loadMap(adresse, latitude, longitude));
 
     $: loadMap(adresse, latitude, longitude);
 
