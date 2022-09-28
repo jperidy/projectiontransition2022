@@ -1,8 +1,8 @@
 <script>
     import { goto } from '$app/navigation';
+	import { films } from '../../data-local/2022/films';
     import CustomLayout from '../CustomLayout.svelte';
     import Film from './Film.svelte';
-    import { films } from './films.js';
 
     export let city = null;
 

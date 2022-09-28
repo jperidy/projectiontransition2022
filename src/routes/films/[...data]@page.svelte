@@ -1,6 +1,6 @@
 <script context='module'>
     import { getSeo } from "../../actions/seoActions";
-    import { films } from "../../components/films/films";
+    import { films } from "../../data-local/2022/films";
     export async function load({ params, url }) {
         const [name, city] = params.data.split('/');
         const film = films.find((film) => (

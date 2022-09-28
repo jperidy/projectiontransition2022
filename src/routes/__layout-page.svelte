@@ -29,6 +29,7 @@
     import '../mains.min.css';
     import Nav from '../components/nav/Nav.svelte';
     import Footer from '../components/footer/Footer.svelte';
+	import ContactButton from '../components/contact/ContactButton.svelte';
 
     export let seo;
     export let fonts;
@@ -58,6 +59,8 @@
 </svelte:head>
 
 <div id='up'></div>
+
+<ContactButton />
 
 <main>
     <Nav navBar={navBar}/>
