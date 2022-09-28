@@ -1,10 +1,12 @@
 <script context="module">
     export function load({ error, status }) {
         return {
-            props: {
-                message: error.message,
-                status // same as status: status
-            }
+            status: 302,
+            redirect: '/',
+            // props: {
+            //     message: error.message,
+            //     status
+            // }
         };
     }
 </script>

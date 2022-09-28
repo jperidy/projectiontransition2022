@@ -60,7 +60,7 @@
 
 <div id='up'></div>
 
-<ContactButton />
+<!-- <ContactButton /> -->
 
 <main>
     <Nav navBar={navBar}/>
