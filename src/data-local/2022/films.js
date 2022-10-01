@@ -1,25 +1,35 @@
 export const CITIES = {
-    // BRUXELLES: 'Bruxelles',
+    BRUXELLES: 'Bruxelles',
     NANTES: 'Nantes',
     PARIS: "Paris",
     TOULOUSE: 'Toulouse',
 };
 
 export const DAYS = {
-    VENDREDI: 'Vendredi 14 octobre',
-    SAMEDI: 'Samedi 15 octobre',
-    DIMANCHE: 'Dimanche 16 octobre',
+    VENDREDI_14_10: 'Vendredi 14 octobre',
+    SAMEDI_15_10: 'Samedi 15 octobre',
+    DIMANCHE_16_10: 'Dimanche 16 octobre',
+    MERCREDI_26_10: 'Mercredi 26 octobre',
+    JEUDI_27_10: 'Jeudi 27 octobre',
 };
 
 export const CINEMAS = {
-    // BRUXELLES: {
-    //     name: 'Cinéma Bruxelles (todo)',
-    //     address: '98 Bd du Montparnasse',
-    //     zip: '75014',
-    //     city: 'Paris',
-    //     ticketingOpenDate: '',
-    //     ticketingRedirection: '',
-    // },
+    BRUXELLES: {
+        name: 'Cinéma Galeries',
+        address: 'Galerie de la Reine 28',
+        zip: '1000',
+        city: 'Bruxelles',
+        gps: {
+            latitude: '50.84758881010562',
+            longitude: '4.354691462449957',
+        },
+        ticketingOpenDate: '30/09/2022',
+        ticketingRedirection: 'https://galeries.be/fr/',
+        organization: CITIES.BRUXELLES,
+        phone: '+32 2 514 74 98',
+        website: "https://galeries.be/fr/",
+        navigation: "https://www.google.com/maps/place/Cin%C3%A9ma+Galeries/@50.8474672,4.3529874,16.83z/data=!4m5!3m4!1s0x47c3c47f64b4b03b:0xb60ed3be0edcc0f!8m2!3d50.847458!4d4.354624",
+    },
     NANTES_MANUAL: {
         name: 'Cinéma centre commercial Pôle Sud',
         address: 'route de Clisson',
@@ -137,19 +147,20 @@ export const films = [
         cities: [
             { 
                 city: CITIES.PARIS, 
-                day: DAYS.SAMEDI, 
+                day: DAYS.SAMEDI_15_10, 
                 moment: "14h",
                 debatMoment: "16h",
-                animator: null,
+                animator: "Juliette Quef, Présidente et journaliste chez Vert.",
                 participants: [
-                    { name: null, description: "description 1"},
-                    { name: null, description: "description 2"},
+                    { name: "Nicolas Dufrêne", description: "Directeur général de l’Institut Rousseau."},
+                    { name: "Olivier Lemaire", description: "Acteur et ancien syndicaliste."},
+                    { name: "Véronique Martin", description: "Membre du bureau confédéral en charge des questions environnementales, du logement et de la paix et du désarmement et à la direction de la fédération CGT des cheminots."},
                 ],
                 cinema: CINEMAS.PARIS,
             }, 
             { 
                 city: CITIES.NANTES, 
-                day: DAYS.SAMEDI, 
+                day: DAYS.SAMEDI_15_10, 
                 moment: "14h",
                 animator: null,
                 participants: [
@@ -160,7 +171,7 @@ export const films = [
             }, 
             { 
                 city: CITIES.TOULOUSE, 
-                day: DAYS.SAMEDI, 
+                day: DAYS.SAMEDI_15_10, 
                 moment: "15h30",
                 animator: null,
                 participants: [
@@ -168,6 +179,20 @@ export const films = [
                     { name: null, description: "description 2"},
                 ],
                 cinema: CINEMAS.TOULOUSE_TOURNEFEUILLE,
+            },
+            { 
+                city: CITIES.BRUXELLES, 
+                day: DAYS.MERCREDI_26_10, 
+                moment: "18h30",
+                debatMoment: "20h30",
+                animator: null,
+                participants: [
+                    { name: "Bruno Bauraind", description: "Secrétaire général du Gresea (Group de Recherche pour une Stratégie Économique Alternative)."},
+                    { name: "Jacques Crahay", description: "Membre du groupe 2030, past-président UWE et past-CEO Cosucra."},
+                    { name: "Emmanuel Mossay", description: "Facilitateur des transitions entrepreneuriales et institutionnelles, EcoRes."},
+                    { name: "Lydie Gaudier", description: "Coordinatrice de la cellule RISE du CEPAG/FGTB wallonne."},
+                ],
+                cinema: CINEMAS.BRUXELLES,
             }, 
         ]
     },
@@ -188,19 +213,20 @@ export const films = [
         cities: [
             { 
                 city: CITIES.PARIS, 
-                day: DAYS.DIMANCHE, 
+                day: DAYS.DIMANCHE_16_10, 
                 moment: "11h",
                 debatMoment: "13h10",
-                animator: null,
+                animator: "Chaymaa Deb, Rédactrice en chef de Natura Sciences",
                 participants: [
-                    { name: null, description: "description 1"},
-                    { name: null, description: "description 2"},
+                    { name: "Philippe Camburet", description: "Président de la Fédération Nationale de l’Agriculture Biologique."},
+                    { name: "Hélène Grosbois", description: "Activiste pour le vivant."},
+                    { name: "Alice Legrix de la Salle", description: "Chargée du financement de la transition agro-écologique chez AXA Climate."},
                 ],
                 cinema: CINEMAS.PARIS,
             }, 
             { 
                 city: CITIES.NANTES, 
-                day: DAYS.DIMANCHE, 
+                day: DAYS.DIMANCHE_16_10, 
                 moment: "13h30",
                 animator: null,
                 participants: [
@@ -211,7 +237,7 @@ export const films = [
             }, 
             { 
                 city: CITIES.TOULOUSE, 
-                day: DAYS.DIMANCHE, 
+                day: DAYS.DIMANCHE_16_10, 
                 moment: "11h",
                 animator: null,
                 participants: [
@@ -219,6 +245,20 @@ export const films = [
                     { name: null, description: "description 2"},
                 ],
                 cinema: CINEMAS.TOULOUSE_BORDEROUGE,
+            },
+            { 
+                city: CITIES.BRUXELLES,
+                day: DAYS.JEUDI_27_10, 
+                moment: "18h30",
+                debatMoment: "20h40",
+                animator: null,
+                participants: [
+                    { name: "Lora Verheecke", description: "Chercheuse pour l'Observatoire des Multinationales sur les lobbies européens."},
+                    { name: "Roxane Chaplain", description: `Assistante parlementaire de Marie Toussaint et membre de l'ONG "Notre affaire à tous."`},
+                    { name: "Sebastian Gonzato", description: "Coordinateur d'XR Etterbeek et Formateur pour Code Rouge."},
+                    { name: "Lucie Morauw", description: "Activiste pour la justice climatique et sociale, membre de Youth For Climate, co-fondatrice du collectif citoyen Totalement Down."},
+                ],
+                cinema: CINEMAS.BRUXELLES,
             }, 
         ]
     },
@@ -239,19 +279,21 @@ export const films = [
         cities: [
             { 
                 city: CITIES.PARIS, 
-                day: DAYS.VENDREDI, 
+                day: DAYS.VENDREDI_14_10, 
                 moment: "14h",
                 debatMoment: "16h00",
-                animator: null,
+                animator: "Vinz Kanté, Expert média & environnement et fondateur du média LIMIT.",
                 participants: [
-                    { name: null, description: "description 1"},
-                    { name: null, description: "description 2"},
+                    { name: "Myriam Dahman", description: "Chargée de mission sensibilisation, éducation et campagnes d’intérêt général à l’Agence Française de Développement."},
+                    { name: "Aurore Mathieu", description: "Responsable Politiques Internationales chez Réseau Action Climat."},
+                    { name: "Marie-Noëlle Reboulet", description: "Présidente du Gérès et du groupe Initiatives."},
+                    { name: "Kalvin Soiresse", description: "Député belge."},
                 ],
                 cinema: CINEMAS.PARIS_MANUAL,
             }, 
             { 
                 city: CITIES.NANTES, 
-                day: DAYS.VENDREDI, 
+                day: DAYS.VENDREDI_14_10, 
                 moment: "14h",
                 debatMoment: "16h00",
                 animator: null,
@@ -263,7 +305,7 @@ export const films = [
             }, 
             { 
                 city: CITIES.TOULOUSE, 
-                day: DAYS.VENDREDI, 
+                day: DAYS.VENDREDI_14_10, 
                 moment: "14h",
                 debatMoment: "16h00",
                 animator: null,
@@ -293,18 +335,18 @@ export const films = [
             { 
                 city: CITIES.PARIS, 
                 debatMoment: "22h",
-                day: DAYS.SAMEDI, 
+                day: DAYS.SAMEDI_15_10, 
                 moment: "20h",
                 animator: null,
                 participants: [
-                    { name: null, description: "description 1"},
-                    { name: null, description: "description 2"},
+                    { name: "Rima Hassan", description: "Présidente-Fondatrice de l’Observatoire des Camps de Réfugiés."},
+                    { name: "François Gemenne", description: "Membre du GIEC, spécialiste des migrations environnementales, professeur à Sciences Po et à l’Université de Liège."},
                 ],
                 cinema: CINEMAS.PARIS,
             }, 
             { 
                 city: CITIES.NANTES, 
-                day: DAYS.SAMEDI, 
+                day: DAYS.SAMEDI_15_10, 
                 moment: "17h45",
                 animator: null,
                 participants: [
@@ -315,7 +357,7 @@ export const films = [
             }, 
             { 
                 city: CITIES.TOULOUSE, 
-                day: DAYS.DIMANCHE, 
+                day: DAYS.DIMANCHE_16_10, 
                 moment: "20h",
                 animator: null,
                 participants: [
@@ -343,19 +385,19 @@ export const films = [
         cities: [
             { 
                 city: CITIES.PARIS, 
-                day: DAYS.DIMANCHE, 
+                day: DAYS.DIMANCHE_16_10, 
                 moment: "17h30",
                 debatMoment: "20h",
                 animator: null,
                 participants: [
-                    { name: null, description: "description 1"},
-                    { name: null, description: "description 2"},
+                    { name: "Amélie Deloche", description: "Consultante en stratégie d’influence éthique / sensibilisation sur les enjeux climatiques et co-créatrice du collectif Paye ton influence."},
+                    { name: "Vinz Kanté", description: "Expert média & environnement et fondateur du média LIMIT"},
                 ],
                 cinema: CINEMAS.PARIS,
             }, 
             { 
                 city: CITIES.NANTES, 
-                day: DAYS.DIMANCHE, 
+                day: DAYS.DIMANCHE_16_10, 
                 moment: "17h10",
                 animator: null,
                 participants: [
@@ -383,19 +425,20 @@ export const films = [
         cities: [
             { 
                 city: CITIES.PARIS, 
-                day: DAYS.VENDREDI, 
+                day: DAYS.VENDREDI_14_10, 
                 moment: "20h",
                 debatMoment: "21h45",
-                animator: null,
+                animator: "Audrey Boehly, ournaliste scientifique, conférencière et enseignante à l’Université de Paris-Saclay.",
                 participants: [
-                    { name: null, description: "description 1"},
-                    { name: null, description: "description 2"},
+                    { name: "Louise Browaeys", description: "Écrivaine, experte RSE et permacultrice."},
+                    { name: "Jean-Marc Jancovici", description: "résident du Shift Project, co-fondateur du cabinet Carbone 4 et membre du Haut Conseil pour le Climat."},
+                    { name: "Emmanuel Pont", description: "Auteur et CEO de Smarter Time."},
                 ],
                 cinema: CINEMAS.PARIS,
             }, 
             { 
                 city: CITIES.NANTES, 
-                day: DAYS.VENDREDI, 
+                day: DAYS.VENDREDI_14_10, 
                 moment: "19h30",
                 animator: null,
                 participants: [
@@ -406,7 +449,7 @@ export const films = [
             }, 
             { 
                 city: CITIES.TOULOUSE, 
-                day: DAYS.VENDREDI, 
+                day: DAYS.VENDREDI_14_10, 
                 moment: "20h30",
                 animator: null,
                 participants: [

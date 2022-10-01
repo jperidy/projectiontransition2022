@@ -12,6 +12,7 @@
 
 <div class="day-container mx-auto">
     {#each Object.values(DAYS) as day }
+        {#if films.filter((film) => film.cities.find((item) => item.city === $city && item.day === day)).length > 0 }
         <div class="row mt-3">
             <div class="col border-top border-bottom border-white py-3">
                 <h2 class="text-uppercase text-center m-0">{day}</h2>
@@ -28,6 +29,7 @@
                 }} />
             {/each}
         </div>
+        {/if}
     {/each}
 </div>
 

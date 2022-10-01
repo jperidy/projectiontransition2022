@@ -40,7 +40,7 @@
             <p class="text-pomme">
                 Début du débat : 
                 {#if cityInformation.debatMoment}
-                    {cityInformation.debatMoment}
+                    {cityInformation.debatMoment}.
                 {:else}
                     à venir
                 {/if}
@@ -56,7 +56,7 @@
             {#each cityInformation.participants as participant}
                 {#if participant && participant.name}
                     <p class="text-white">
-                        <span class="fw-bold">{participant.name}</span>
+                        <span class="fw-bold">{participant.name} : </span>
                         <span>{participant.description}</span>
                     </p> 
                 {/if}

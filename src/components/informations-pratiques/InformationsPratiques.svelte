@@ -56,7 +56,7 @@
     <h2 id="contact">Contactez-nous</h2>
     <div class="col-12 col-md-6 mb-3 pe-4">
         <select class="form-select" on:change={selectContactHandler}>
-            <option selected>Qui souhaitez-vous contacter ?</option>
+            <option selected disabled>Qui souhaitez-vous contacter ?</option>
             <option value="contact">Contact grand public</option>
             <option value="presse">Contact presse</option>
             <option value="dev">Développeur web</option>
