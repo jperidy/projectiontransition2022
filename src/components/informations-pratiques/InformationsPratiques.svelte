@@ -35,19 +35,27 @@
                 mapid={`${index}`}
             />
         </div>
-        <div class="col-12 col-md-6 d-flex flex-md-column align-items-center justify-content-center">
-            <button 
-                class="btn btn-pomme m-3"
-                on:click={window.open(location.website, "_blank")}
-            >
-                Site web du cinéma
-            </button>
-            <button 
-                class="btn btn-pomme m-3"
-                on:click={window.open(location.navigation, "_blank")}
-            >
-                Lancer la navigation
-            </button>
+
+        <div class="col-12 col-md-6 text-center">
+            {#if location.access}
+            <div>
+                <strong>Accès</strong> : {location.access}
+            </div>
+            {/if}
+            <div class="d-flex flex-wrap justify-content-center py-3">
+                <button 
+                    class="btn btn-pomme m-3"
+                    on:click={window.open(location.website, "_blank")}
+                >
+                    Site web du cinéma
+                </button>
+                <button 
+                    class="btn btn-pomme m-3"
+                    on:click={window.open(location.navigation, "_blank")}
+                >
+                    Naviguer vers
+                </button>
+            </div>
         </div>
     </div>
 {/each}
@@ -67,6 +75,6 @@
 
 <style>
     button {
-        min-width: 50px;
+        min-width: 180px;
     }
 </style>
