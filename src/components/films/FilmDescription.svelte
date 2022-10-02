@@ -36,7 +36,7 @@
             </p>
             <div class="border-bottom border-3 border-pomme line" />
             <p class="text-center text-lg-start">{film.summary}</p>
-            <h1 class="text-white text-center text-lg-start pt-3">Débat. {film.theme}</h1>
+            <h1 class="text-white text-center text-lg-start pt-3">Débat. {cityInformation.theme || film.theme}</h1>
             <p class="text-pomme">
                 Début du débat : 
                 {#if cityInformation.debatMoment}
