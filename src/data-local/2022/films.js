@@ -1,8 +1,8 @@
 export const CITIES = {
-    BRUXELLES: 'Bruxelles',
     NANTES: 'Nantes',
     PARIS: "Paris",
     TOULOUSE: 'Toulouse',
+    BRUXELLES: 'Bruxelles',
 };
 
 export const DAYS = {
@@ -184,6 +184,7 @@ export const films = [
                 city: CITIES.BRUXELLES, 
                 day: DAYS.MERCREDI_26_10, 
                 moment: "18h30",
+                debat: "La construction d'un monde sobre en carbone implique des transformations systémiques profondes. Les besoins vont évoluer dans la quasi-totalité de l'économie, en supprimant et en créant de nouveaux emplois, ainsi qu'en termes de compétences et de connaissances. Comme l'a identifié le \"Plan de Transformation de l'Économie Française\" (PTFE) proposé par le Shift Project, la transition rend possible une augmentation nette d’environ 300 000 emplois en France. Cependant, le principal problème est que l'évolution sectorielle est très hétérogène, avec des secteurs où de nombreux emplois sont créés, et d'autres, comme l'industrie automobile ou l'aviation, où la destruction d'emplois est importante. La transition vers une économie belge décarbonée implique également d’importantes mutations. Le film En Guerre de Stéphane Brizé montre magnifiquement la souffrance liée à la perte d'emploi et l'impossibilité d'en retrouver un autre dans une région sinistrée. Afin de trouver une solution qui soit sociale, démocratique et écologique, il est nécessaire d'établir un dialogue avec les acteurs du monde du travail. Élaborer des stratégies collectives est indispensable pour éviter de tomber dans une logique antagoniste entre \"fin du monde\" et \"fin du mois\". ",
                 debatMoment: "20h30",
                 animator: null,
                 participants: [
@@ -250,6 +251,7 @@ export const films = [
                 city: CITIES.BRUXELLES,
                 day: DAYS.JEUDI_27_10, 
                 moment: "18h30",
+                debat: "L'histoire de David contre Goliath évoque une lutte inégale entre deux forces. Frédéric Tellier présente dans ce film le combat juridique et citoyen pour l'interdiction de la Tétrazine, un pesticide cancérigène, et les enjeux personnels qu'il comporte pour les protagonistes. À travers les expériences d'un militant, d'un avocat spécialisé dans l'environnement et d'un lobbyiste, ils nous offrent une image de la manière dont le pouvoir s'articule autour des décisions politiques. Ainsi, le film sert de point de départ pour aborder la façon dont les actions des citoyens mènent la transition écologique, en créant des mouvements de pression qui bousculent le système politique.",
                 debatMoment: "20h40",
                 animator: null,
                 participants: [
@@ -428,10 +430,10 @@ export const films = [
                 day: DAYS.VENDREDI_14_10, 
                 moment: "20h",
                 debatMoment: "21h45",
-                animator: "Audrey Boehly, ournaliste scientifique, conférencière et enseignante à l’Université de Paris-Saclay.",
+                animator: "Audrey Boehly, journaliste scientifique, conférencière et enseignante à l’Université de Paris-Saclay.",
                 participants: [
                     { name: "Louise Browaeys", description: "Écrivaine, experte RSE et permacultrice."},
-                    { name: "Jean-Marc Jancovici", description: "résident du Shift Project, co-fondateur du cabinet Carbone 4 et membre du Haut Conseil pour le Climat."},
+                    { name: "Jean-Marc Jancovici", description: "Président du Shift Project, co-fondateur du cabinet Carbone 4 et membre du Haut Conseil pour le Climat."},
                     { name: "Emmanuel Pont", description: "Auteur et CEO de Smarter Time."},
                 ],
                 cinema: CINEMAS.PARIS,

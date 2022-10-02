@@ -56,7 +56,7 @@
             {#each cityInformation.participants as participant}
                 {#if participant && participant.name}
                     <p class="text-white">
-                        <span class="fw-bold">{participant.name} : </span>
+                        <span class="fw-bold">{participant.name.toUpperCase()} - </span>
                         <span>{participant.description}</span>
                     </p> 
                 {/if}
@@ -64,7 +64,7 @@
 
             <div class="border-bottom border-3 border-pomme line" />
 
-            <p class="text-center text-lg-start">{film.debat}</p>
+            <p class="text-center text-lg-start">{cityInformation.debat || film.debat}</p>
 
             <h1 class="text-white text-center text-lg-start pt-3">Bande-annonce</h1>
             <iframe 
