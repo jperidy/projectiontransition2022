@@ -53,7 +53,7 @@
                     class="btn btn-pomme m-3"
                     on:click={window.open(location.navigation, "_blank")}
                 >
-                    Naviguer vers
+                    Se rendre au cinéma
                 </button>
             </div>
         </div>
