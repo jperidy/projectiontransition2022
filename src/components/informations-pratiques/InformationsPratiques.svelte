@@ -42,6 +42,21 @@
                 <strong>Accès</strong> : {location.access}
             </div>
             {/if}
+            {#if location.bus}
+            <div>
+                <strong>Bus</strong> : {location.bus}
+            </div>
+            {/if}
+            {#if location.ter}
+            <div>
+                <strong>Ter</strong> : {location.ter}
+            </div>
+            {/if}
+            {#if location.otherTransport}
+            <div>
+                {location.otherTransport.description} : <span class="external-link bg-pomme text-outremer" on:click={window.open(location.otherTransport.link, '_blank')}>{location.otherTransport.name}</span>
+            </div>
+            {/if}
             <div class="d-flex flex-wrap justify-content-center py-3">
                 <button 
                     class="btn btn-pomme m-3"
@@ -76,5 +91,12 @@
 <style>
     button {
         min-width: 180px;
+    }
+    .external-link {
+        text-decoration: underline;
+    }
+    .external-link:hover {
+        text-decoration: underline;
+        cursor: pointer;
     }
 </style>
