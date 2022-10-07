@@ -366,6 +366,7 @@ export const films = [
                 participants: [
                     { name: "Rima Hassan", description: "Présidente-Fondatrice de l’Observatoire des Camps de Réfugiés."},
                     { name: "François Gemenne", description: "Membre du GIEC, spécialiste des migrations environnementales, professeur à Sciences Po et à l’Université de Liège."},
+                    { name: "Adrien Estève", description: "Postdoctorant CNRS au Centre de Recherches Internationales de Sciences Po, résident à l'IRSEM." },
                 ],
                 cinema: CINEMAS.PARIS,
             }, 
