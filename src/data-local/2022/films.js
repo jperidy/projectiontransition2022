@@ -166,7 +166,7 @@ export const films = [
                     { name: "Nicolas Dufrêne", description: "Directeur général de l’Institut Rousseau."},
                     { name: "Olivier Lemaire", description: "Acteur et ancien syndicaliste."},
                     { name: "Véronique Martin", description: "Membre du bureau confédéral en charge des questions environnementales, du logement et de la paix et du désarmement et à la direction de la fédération CGT des cheminots."},
-                    { name: "Fabrice Bonnifet", description: "Directeur Développement Durable & Qualité, Sécurité, Environnement du Groupe Bouygues" },
+                    { name: "Fabrice Bonnifet", description: "Directeur Développement Durable & Qualité, Sécurité, Environnement du Groupe Bouygues." },
                 ],
                 cinema: CINEMAS.PARIS,
             }, 
