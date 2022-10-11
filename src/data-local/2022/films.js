@@ -314,7 +314,7 @@ export const films = [
                     { name: "Aurore Mathieu", description: "Responsable Politiques Internationales chez Réseau Action Climat."},
                     { name: "Marie-Noëlle Reboulet", description: "Présidente du Gérès et du groupe Initiatives."},
                     { name: "Kalvin Soiresse", description: "Député belge."},
-                    { name: "Val", description: "Association Jiboiana, représentante du peuple Munduruku (Amazonie)"},
+                    { name: "Val", description: "Association Jiboiana, représentante du peuple Munduruku (Amazonie)."},
                 ],
                 cinema: CINEMAS.PARIS_MANUAL,
             }, 
