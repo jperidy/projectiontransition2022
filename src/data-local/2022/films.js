@@ -260,8 +260,8 @@ export const films = [
             { 
                 city: CITIES.TOULOUSE, 
                 day: DAYS.DIMANCHE_16_10, 
-                moment: "11h",
-                debatMoment: "13h05",
+                moment: "11h30",
+                debatMoment: "13h35",
                 animator: "Victorine Castex, Bénévole chez Les Shifters",
                 participants: [
                     { name: "Michel Duru", description: "Directeur de recherche et chargé de mission à l’Institut national de recherche pour l’agriculture."},
