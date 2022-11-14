@@ -78,7 +78,7 @@
             const randomColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
 
             for (let incr = 0; incr < Math.ceil(numberOfDay); incr++) {
-                currentDay = copyStart.toISOString().substring(0,10);
+                const currentDay = copyStart.toISOString().substring(0,10);
                 copyStart.setUTCDate(copyStart.getUTCDate() + 1);
                 const result = logs.filter((log) => log.createdAt === currentDay && log.target === targetpage);
                 if (result && result.length > 0) {
