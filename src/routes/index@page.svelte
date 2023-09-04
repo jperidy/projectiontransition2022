@@ -24,9 +24,9 @@
 
 <SeoComponent
     pageContent={{
-        titleSeo: "Projection Transition | 14 > 16 octobre 2022",
+        titleSeo: "Projection Transition | 17 > 19 novembre 2023",
         descriptionSeo: "Festival de ciné-débat pour la transition écologique",
-        titleOG: "Projection Transition | 14 > 16 octobre 2022",
+        titleOG: "Projection Transition | 17 > 19 novembre 2023",
         descriptionOG: "Festival de ciné-débat pour la transition écologique !"
     }}
     url={url}

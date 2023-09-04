@@ -65,6 +65,18 @@
 <main>
     <Nav navBar={navBar}/>
     <div class="m-0">
+        <div class="overlay">
+            <div class="warning bg-tangerine px-3 py-3 text-center rounded">
+                <h1>
+                    Le festival revient du 17 au 19 novembre 2023 à Paris, Angers, Toulouse, Lyon et Bruxelles ! Toutes les informations 
+                    seront disponibles ici prochainement.<br> 
+                </h1>
+                <p class="contact mt-3">
+                    Pour toute question : 
+                    <a href="mail:contact@projectiontransition.fr">contact@projectiontransition.fr</a>
+                </p>
+            </div>
+        </div>
         <slot></slot>
     </div>
 </main>
@@ -72,3 +84,28 @@
 <footer>
 	<Footer footer={footer} />
 </footer>
+
+<style>
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.6);
+        z-index: 10;
+    }
+    .warning {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 8px 8px 10px rgba(255, 255, 255, 0.4);
+    }
+    .contact {
+        font-size: 20px;
+    }
+    a {
+        color: white;
+    }
+</style>
