@@ -65,6 +65,14 @@
 <main>
     <Nav navBar={navBar}/>
     <div class="m-0">
+        <div class="overlay">
+            <div class="warning bg-tangerine px-3 py-3 text-center rounded">
+                <h1>
+                    Le festival revient du 17 au 19 novembre à Paris, Anger, Lyon et Bruxelles ! Toutes les informations 
+                    seront disponibles ici prochainement.
+                </h1>
+            </div>
+        </div>
         <slot></slot>
     </div>
 </main>
@@ -72,3 +80,22 @@
 <footer>
 	<Footer footer={footer} />
 </footer>
+
+<style>
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.6);
+        z-index: 10;
+    }
+    .warning {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(10deg);
+        box-shadow: 8px 8px 10px rgba(255, 255, 255, 0.4);
+    }
+</style>
