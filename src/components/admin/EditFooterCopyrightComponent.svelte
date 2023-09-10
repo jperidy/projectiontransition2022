@@ -7,7 +7,7 @@
 <div class="row p-2">
     <div class="col">
         <label for="copyright-name">Display</label>
-        <input type="text" class="form-control" id="copyright-name" bind:value={footer.COPYRIGHT.value} placeholder="©2021">
+        <input type="text" class="form-control" id="copyright-name" bind:value={footer.COPYRIGHT.value} placeholder="©2023">
     </div>
     <div class="col">
         <label for="copyright-bootstrapclass">Bootstrap class</label>

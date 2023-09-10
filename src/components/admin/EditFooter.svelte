@@ -36,7 +36,7 @@
             {"name": "email", "icon": "", "alt": "", "redirect": "", "target": ""},
         ],
         "COPYRIGHT": {
-            "value": "©2021",
+            "value": "©2023",
             "style": "font-size:1rem;",
             "bootstrapClass": "mx-3"
         },
