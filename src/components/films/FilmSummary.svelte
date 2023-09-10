@@ -62,8 +62,8 @@
         font-family: 'omotenashi_2regular';
         font-size: 24px;
     }
-    .carousel-slide {
+    /* .carousel-slide {
         display: flex;
         justify-content: center;
-    }
+    } */
 </style>
