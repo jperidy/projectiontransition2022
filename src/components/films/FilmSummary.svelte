@@ -3,8 +3,8 @@
 	import { films } from '../../data-local/2022/films';
     import CustomLayout from '../CustomLayout.svelte';
     import Film from './Film.svelte';
-    import { Splide, SplideSlide } from '@splidejs/svelte-splide';
-    import '@splidejs/svelte-splide/css';
+    // import { Splide, SplideSlide } from '@splidejs/svelte-splide';
+    // import '@splidejs/svelte-splide/css';
 
     export let city = null;
 
@@ -16,12 +16,12 @@
 <div>
     <CustomLayout size={{xs: 12, sm: 12, md: 12, lg: 12, xl: 12}}>
         <h1 class="text-center text-pomme">La programmation 2022</h1>
-        <!-- <div class="d-flex flex-wrap justify-content-center">
+        <div class="d-flex flex-wrap justify-content-center">
             {#each filmList as film}
                 <Film film={film} city={city}/>
             {/each}
-        </div> -->
-        <div class="mt-3">
+        </div>
+        <!-- <div class="mt-3">
             <Splide 
                 aria-label="Liste des films"
                 options={{
@@ -45,7 +45,7 @@
                     </SplideSlide>
                 {/each}
             </Splide>
-        </div>
+        </div> -->
     </CustomLayout>
 
     {#if !city}
